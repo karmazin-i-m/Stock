@@ -1,0 +1,7 @@
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request finished in 1050.8624ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2584.6134ms
+Request finished in 5676.0376ms 200 text/plain; charset=utf-8
