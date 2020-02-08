@@ -18,24 +18,38 @@ namespace Stock.WebAPI.Controllers.Users
     [ApiController]
     public class RegistrationController : Controller
     {
-        private readonly IConfiguration configuration;
         private readonly UnitOfWork db;
         private readonly IRepository<User> users;
+
+        public RegistrationController()
+        {
+            this.db = UnitOfWork.GetInstance();
+            this.users = db.Users;
+        }   
 
         [AllowAnonymous]
         [HttpPost]
         public IActionResult RegistrationYser([FromBody]RegistrationModel registrationUser)
         {
-            IActionResult response = Unauthorized();
-            var user = Authenticate(login);
+            if (!Registration(registrationUser))
+                return BadRequest();
+            return Ok();
+        }
 
-            if (user != null)
+        private Boolean Registration(RegistrationModel registrationUser)
+        {
+            if (registrationUser.Password != registrationUser.Password)
+                return false;
+            users.Create(new DB.Models.User()
             {
-                var tokenString = BuildToken(user);
-                response = Ok(new { token = tokenString });
-            }
-
-            return response;
+                Name = registrationUser.Name,
+                Password = registrationUser.Password,
+                Email = registrationUser.Email,
+                Login = registrationUser.Login,
+                Role = Role.User
+            });
+            db.Save();
+            return true;
         }
     }
 }

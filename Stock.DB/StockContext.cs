@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Stock.DB
 {
-    class StockContext : DbContext
+    public class StockContext : DbContext
     {
         public static readonly ILoggerFactory FileLogger = new LoggerFactory(new List<FileLoggerProvider>() { new FileLoggerProvider() });
 
@@ -19,7 +19,6 @@ namespace Stock.DB
 
         public StockContext()
         {
-            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 

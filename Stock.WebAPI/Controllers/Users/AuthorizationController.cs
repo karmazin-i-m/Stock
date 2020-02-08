@@ -28,7 +28,7 @@ namespace Stock.WebAPI.Users.Controllers
         public AuthorizationController(IConfiguration configuration)
         {
             this.configuration = configuration;
-            this.db = new UnitOfWork();
+            this.db = UnitOfWork.GetInstance();
             users = db.Users;
         }
 
