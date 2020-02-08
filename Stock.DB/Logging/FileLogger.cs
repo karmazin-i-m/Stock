@@ -8,6 +8,7 @@ namespace Stock.DB.Logging
 {
     class FileLogger : ILogger
     {
+        private Object _lock = new object();
         public IDisposable BeginScope<TState>(TState state)
         {
             return null;
@@ -20,7 +21,8 @@ namespace Stock.DB.Logging
 
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
-            File.AppendAllText("StockDBLog.txt", formatter(state, exception));
+            lock (_lock)
+                File.AppendAllText("StockDBLog.txt", formatter(state, exception));
         }
     }
 }

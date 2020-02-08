@@ -1717,4 +1717,78 @@ FROM [Products] AS [e]
 WHERE [e].[Id] = @__get_Item_0Executed DbCommand (5ms) [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
 SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
 FROM [Products] AS [e]
-WHERE [e].[Id] = @__get_Item_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.
+WHERE [e].[Id] = @__get_Item_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (176ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'(from Product e in DbSet<Product>
+where Property([e], "Id") == __get_Item_0
+select [e]).FirstOrDefault()'Optimized query model: 
+'(from Product e in DbSet<Product>
+where Property([e], "Id") == __get_Item_0
+select [e]).FirstOrDefault()'(QueryContext queryContext) => IEnumerable<Product> _InterceptExceptions(
+    source: IEnumerable<Product> _TrackEntities(
+        results: IEnumerable<Product> _ToSequence(Product FirstOrDefault(IEnumerable<Product> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+                        FROM [Products] AS [e]
+                        WHERE [e].[Id] = @__get_Item_0, 
+                    shaper: BufferedEntityShaper<Product>))), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Product }, 
+        entityAccessors: List<Func<Product, object>> 
+        { 
+            Func<Product, Product>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0Executed DbCommand (91ms) [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Products]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;Executed DbCommand (296ms) [Parameters=[@p0='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Products]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (868ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0Executed DbCommand (29ms) [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Products]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;Executed DbCommand (27ms) [Parameters=[@p0='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Products]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (199ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 4000), @p3='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Products] ([OrderId], [Price], [ProductName], [Weight])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Products]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();Executed DbCommand (78ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 4000), @p3='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Products] ([OrderId], [Price], [ProductName], [Weight])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Products]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (137ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.

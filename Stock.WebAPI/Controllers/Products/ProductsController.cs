@@ -36,7 +36,7 @@ namespace Stock.WebAPI.Controllers.Products
 
         [Authorize]
         [HttpGet("{id}")]
-        public IActionResult GetProduct(int id)
+        public IActionResult GetProduct(Int32 id)
         {
             Product product = products.Get(id);
             return Json(product);
@@ -47,6 +47,24 @@ namespace Stock.WebAPI.Controllers.Products
         public IEnumerable<Product> GetProductsList()
         {
             return products.GetList();
+        }
+
+        [Authorize]
+        [HttpPut]
+        public IActionResult UpdateProduct([FromBody]Product product)
+        {
+            products.Update(product);
+            db.Save();
+            return Ok();
+        }
+
+        [Authorize]
+        [HttpDelete("{id}")]
+        public IActionResult UpdateProduct(Int32 id)
+        {
+            products.Delete(id);
+            db.Save();
+            return Ok();
         }
     }
 }   
