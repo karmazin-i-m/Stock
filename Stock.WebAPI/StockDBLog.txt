@@ -1,0 +1,1228 @@
+An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executed DbCommand (233ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Executed DbCommand (359ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An error occurred using the connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executed DbCommand (768ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Executed DbCommand (105ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executed DbCommand (75ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (31ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Committing transaction.Disposing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (240ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (38ms) [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (43ms) [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IEnumerable<User> _InterceptExceptions(
+    source: IEnumerable<User> _TrackEntities(
+        results: IEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executed DbCommand (71ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Executed DbCommand (60ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An error occurred using the connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executed DbCommand (607ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Executed DbCommand (184ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executed DbCommand (34ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Committing transaction.Disposing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (20ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (18ms) [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (26ms) [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executed DbCommand (51ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An error occurred using the connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executed DbCommand (529ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Executed DbCommand (78ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Committing transaction.Disposing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (29ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (40ms) [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (50ms) [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An error occurred using the connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executed DbCommand (537ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Executed DbCommand (143ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Committing transaction.Disposing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (32ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (33ms) [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (39ms) [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.An 'IServiceProvider' was created for internal use by Entity Framework.An 'IServiceProvider' was created for internal use by Entity Framework.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An error occurred using the connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executed DbCommand (395ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Executed DbCommand (80ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Committing transaction.Disposing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (89ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (20ms) [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (11ms) [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IEnumerable<User> _InterceptExceptions(
+    source: IEnumerable<User> _TrackEntities(
+        results: IEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executed DbCommand (131ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An error occurred using the connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executed DbCommand (348ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Executed DbCommand (73ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Committing transaction.Disposing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (77ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (13ms) [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (11ms) [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IEnumerable<User> _InterceptExceptions(
+    source: IEnumerable<User> _TrackEntities(
+        results: IEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executed DbCommand (93ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;');Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+DROP DATABASE [StockDB];Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An error occurred using the connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'master' on server '(localdb)\mssqllocaldb'.Opened connection to database 'master' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executed DbCommand (283ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [StockDB];Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Executed DbCommand (126ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [StockDB] SET READ_COMMITTED_SNAPSHOT ON;');Closing connection to database 'master' on server '(localdb)\mssqllocaldb'.Closed connection to database 'master' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Login] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderId] int NULL,
+    [Price] float NOT NULL,
+    [ProductName] nvarchar(max) NULL,
+    [Weight] float NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);Committing transaction.Disposing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (79ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, 0),
+(@p5, @p6, @p7, @p8, @p9, 1),
+(@p10, @p11, @p12, @p13, @p14, 2)) AS i ([Email], [Login], [Name], [Password], [Role], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Email], [Login], [Name], [Password], [Role])
+VALUES (i.[Email], i.[Login], i.[Name], i.[Password], i.[Role])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Users] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (11ms) [Parameters=[@p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Orders] USING (
+VALUES (@p15, @p16, 0),
+(@p17, @p18, 1),
+(@p19, @p20, 2)) AS i ([Date], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Date], [UserId])
+VALUES (i.[Date], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Orders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Executing DbCommand [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];Executed DbCommand (11ms) [Parameters=[@p21='?', @p22='?', @p23='?' (Size = 4000), @p24='?', @p25='?', @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?', @p30='?', @p31='?' (Size = 4000), @p32='?', @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?', @p39='?' (Size = 4000), @p40='?', @p41='?', @p42='?', @p43='?' (Size = 4000), @p44='?', @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?', @p49='?', @p50='?', @p51='?' (Size = 4000), @p52='?', @p53='?', @p54='?', @p55='?' (Size = 4000), @p56='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p21, @p22, @p23, @p24, 0),
+(@p25, @p26, @p27, @p28, 1),
+(@p29, @p30, @p31, @p32, 2),
+(@p33, @p34, @p35, @p36, 3),
+(@p37, @p38, @p39, @p40, 4),
+(@p41, @p42, @p43, @p44, 5),
+(@p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, 7),
+(@p53, @p54, @p55, @p56, 8)) AS i ([OrderId], [Price], [ProductName], [Weight], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([OrderId], [Price], [ProductName], [Weight])
+VALUES (i.[OrderId], i.[Price], i.[ProductName], i.[Weight])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.
