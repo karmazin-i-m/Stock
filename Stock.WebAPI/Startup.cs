@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Stock.DB;
+using Stock.DB.Services;
 using Stock.WebAPI.Logging;
 
 namespace Stock.WebAPI
@@ -30,6 +31,7 @@ namespace Stock.WebAPI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IUnitOfWork, UnitOfWork>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {

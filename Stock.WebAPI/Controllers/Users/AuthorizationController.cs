@@ -11,9 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Stock.DB.Repositories;
 using Stock.DB.Models;
-using Stock.DB;
 using Stock.WebAPI.Models;
 using System.Security.Claims;
+using Stock.DB.Services;
 
 namespace Stock.WebAPI.Users.Controllers
 {
@@ -22,13 +22,13 @@ namespace Stock.WebAPI.Users.Controllers
     public class AuthorizationController : Controller
     {
         private readonly IConfiguration configuration;
-        private readonly UnitOfWork db;
+        private readonly IUnitOfWork db;
         private readonly IRepository<User> users;
 
-        public AuthorizationController(IConfiguration configuration)
+        public AuthorizationController(IConfiguration configuration, IUnitOfWork db)
         {
             this.configuration = configuration;
-            this.db = UnitOfWork.GetInstance();
+            this.db = db;
             users = db.Users;
         }
 

@@ -5,11 +5,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Stock.DB
+namespace Stock.DB.Services
 {
-    public class UnitOfWork : IDisposable
+    public class UnitOfWork : IUnitOfWork
     {
-        private static readonly UnitOfWork instance = null;
 
         private readonly StockContext db;
         private IRepository<User> usersRepositories;
@@ -44,16 +43,9 @@ namespace Stock.DB
             }
         }
 
-        private UnitOfWork()
+        public UnitOfWork()
         {
             this.db = new StockContext();
-        }
-
-        public static UnitOfWork GetInstance()
-        {
-            if (instance == null)
-                return new UnitOfWork();
-            return instance;
         }
 
         public void Save()

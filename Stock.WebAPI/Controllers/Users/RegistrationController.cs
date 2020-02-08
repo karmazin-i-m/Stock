@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Stock.DB;
 using Stock.DB.Models;
 using Stock.DB.Repositories;
+using Stock.DB.Services;
 using Stock.WebAPI.Models;
 
 namespace Stock.WebAPI.Controllers.Users
@@ -17,12 +18,12 @@ namespace Stock.WebAPI.Controllers.Users
     [Route("api/[controller]")]
     public class RegistrationController : Controller
     {
-        private readonly UnitOfWork db;
+        private readonly IUnitOfWork db;
         private readonly IRepository<User> users;
 
-        public RegistrationController()
+        public RegistrationController(IUnitOfWork db)
         {
-            this.db = UnitOfWork.GetInstance();
+            this.db = db;
             this.users = db.Users;
         }   
 

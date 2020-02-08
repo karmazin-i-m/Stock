@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Stock.DB;
 using Stock.DB.Models;
 using Stock.DB.Repositories;
+using Stock.DB.Services;
 
 namespace Stock.WebAPI.Controllers.Products
 {
@@ -16,12 +17,12 @@ namespace Stock.WebAPI.Controllers.Products
     [Authorize]
     public class ProductsController : Controller
     {
-        private readonly UnitOfWork db;
+        private readonly IUnitOfWork db;
         private readonly IRepository<Product> products;
 
-        public ProductsController()
+        public ProductsController(IUnitOfWork db)
         {
-            this.db = UnitOfWork.GetInstance();
+            this.db = db;
             this.products = db.Products;
         }
 
