@@ -19,7 +19,7 @@ namespace Stock.DB
 
         public StockContext()
         {
-            Database.EnsureCreated();
+            Database.EnsureCreatedAsync();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -3,6 +3,7 @@ using Stock.DB.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Stock.DB.Repositories
 {
@@ -15,16 +16,25 @@ namespace Stock.DB.Repositories
             this.db = db;
         }
 
-        public void Create(Order item)
+        public Int32 Create(Order item)
         {
             db.Orders.Add(item);
+            return db.Orders.Find(item).Id;
         }
 
-        public void Delete(int id)
+        public async Task<int> CreateAsync(Order item)
+        {
+            await db.Orders.AddAsync(item);
+            return db.Orders.FindAsync(item).Id;
+        }
+
+        public Boolean Delete(int id)
         {
             Order order = Get(id);
-            if (order != null)
-                db.Orders.Remove(order);
+            if (order == null)
+                return false;
+            db.Orders.Remove(order);
+            return true;
         }
 
         public Order Get(int id)
@@ -32,14 +42,25 @@ namespace Stock.DB.Repositories
             return db.Orders.Find(id);
         }
 
+        public async Task<Order> GetAsync(int id)
+        {
+            return await db.Orders.FindAsync(id);
+        }
+
         public IEnumerable<Order> GetList()
         {
             return db.Orders;
         }
 
-        public void Update(Order item)
+        public async Task<IEnumerable<Order>> GetListAsync()
+        {
+            return await db.Orders.ToListAsync<Order>();
+        }
+
+        public Boolean Update(Order item)
         {
             db.Entry(item).State = EntityState.Modified;
+            return true;
         }
     }
 }

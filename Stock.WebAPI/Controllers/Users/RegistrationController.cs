@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Stock.DB;
 using Stock.DB.Models;
 using Stock.DB.Repositories;
 using Stock.DB.Services;

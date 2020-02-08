@@ -10,7 +10,7 @@ namespace Stock.WebAPI.Logging
     public class FileLogger : ILogger
     {
         private string filePath;
-        private static object _lock = new object();
+        private static readonly Object _lock = new object();
         public FileLogger(string path)
         {
             filePath = path;

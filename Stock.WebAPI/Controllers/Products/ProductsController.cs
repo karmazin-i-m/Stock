@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Stock.DB;
 using Stock.DB.Models;
 using Stock.DB.Repositories;
 using Stock.DB.Services;
@@ -28,26 +27,26 @@ namespace Stock.WebAPI.Controllers.Products
 
         [Authorize]
         [HttpPost]
-        public IActionResult AddProduct([FromBody]Product product)
+        public async Task<IActionResult> AddProductAsync([FromBody]Product product)
         {
-            products.Create(product);
-            db.Save();
+            await products.CreateAsync(product);
+            await db.SaveAsync();
             return Ok();
         }
 
         [Authorize]
         [HttpGet("{id}")]
-        public IActionResult GetProduct(Int32 id)
+        public async Task<IActionResult> GetProductAsync(Int32 id)
         {
-            Product product = products.Get(id);
+            Product product = await products.GetAsync(id);
             return Json(product);
         }
 
         [Authorize]
         [HttpGet()]
-        public IEnumerable<Product> GetProductsList()
+        public async Task<IEnumerable<Product>> GetProductsListAsync()
         {
-            return products.GetList();
+            return await products.GetListAsync();
         }
 
         [Authorize]
@@ -61,11 +60,11 @@ namespace Stock.WebAPI.Controllers.Products
 
         [Authorize]
         [HttpDelete("{id}")]
-        public IActionResult UpdateProduct(Int32 id)
+        public IActionResult DeleteProduct(Int32 id)
         {
             products.Delete(id);
             db.Save();
             return Ok();
         }
     }
-}   
+}

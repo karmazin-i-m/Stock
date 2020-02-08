@@ -34,10 +34,10 @@ namespace Stock.WebAPI.Users.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult CreateToken([FromBody]LoginModel login)
+        public async Task<IActionResult> CreateTokenAsync([FromBody]LoginModel login)
         {
             IActionResult response = Unauthorized();
-            var user = Authenticate(login);
+            User user = await Authenticate(login);
 
             if (user != null)
             {
@@ -75,9 +75,9 @@ namespace Stock.WebAPI.Users.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        private User Authenticate(LoginModel login)
+        private async Task<User> Authenticate(LoginModel login)
         {
-            IEnumerable<User> allUsers = this.users.GetList();
+            IEnumerable<User> allUsers = await this.users.GetListAsync();
 
             User user = allUsers.FirstOrDefault((currentUser) =>
             {

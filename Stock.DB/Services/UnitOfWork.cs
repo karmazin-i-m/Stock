@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Stock.DB.Services
 {
@@ -48,9 +49,15 @@ namespace Stock.DB.Services
             this.db = new StockContext();
         }
 
-        public void Save()
+        public Boolean Save()
         {
             db.SaveChanges();
+            return true;
+        }
+        public async Task<bool> SaveAsync()
+        {
+            await db.SaveChangesAsync();
+            return true;
         }
 
         private bool disposed = false;

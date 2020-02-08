@@ -3,6 +3,7 @@ using Stock.DB.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Stock.DB.Services
 {
@@ -11,6 +12,7 @@ namespace Stock.DB.Services
         IRepository<User> Users { get; }
         IRepository<Product> Products { get; }
         IRepository<Order> Orders { get; }
-        void Save();
+        Boolean Save();
+        Task<Boolean> SaveAsync();
     }
 }

@@ -3,6 +3,7 @@ using Stock.DB.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Stock.DB.Repositories
 {
@@ -13,16 +14,25 @@ namespace Stock.DB.Repositories
         {
             this.db = db;
         }
-        public void Create(User item)
+        public Int32 Create(User item)
         {
             db.Users.Add(item);
+            return db.Find<User>(item).Id;
         }
 
-        public void Delete(int id)
+        public async Task<Int32> CreateAsync(User item)
+        {
+            await db.Users.AddAsync(item);
+            return db.Users.FindAsync(item).Id;
+        }
+
+        public Boolean Delete(int id)
         {
             User user = Get(id);
-            if (user != null)
-                db.Users.Remove(user);
+            if (user == null)
+                return false;
+            db.Users.Remove(user);
+            return true;
         }
 
         public User Get(int id)
@@ -30,14 +40,25 @@ namespace Stock.DB.Repositories
             return db.Users.Find(id);
         }
 
+        public async Task<User> GetAsync(int id)
+        {
+            return await db.Users.FindAsync(id);
+        }
+
         public IEnumerable<User> GetList()
         {
             return db.Users;
         }
 
-        public void Update(User item)
+        public async Task<IEnumerable<User>> GetListAsync()
+        {
+            return await db.Users.ToListAsync<User>();
+        }
+
+        public Boolean Update(User item)
         {
             db.Entry(item).State = EntityState.Modified;
+            return true;
         }
     }
 }
