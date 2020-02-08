@@ -15,7 +15,6 @@ namespace Stock.WebAPI.Controllers.Users
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
-    [ApiController]
     public class RegistrationController : Controller
     {
         private readonly UnitOfWork db;
@@ -31,15 +30,13 @@ namespace Stock.WebAPI.Controllers.Users
         [HttpPost]
         public IActionResult RegistrationYser([FromBody]RegistrationModel registrationUser)
         {
-            if (!Registration(registrationUser))
-                return BadRequest();
+            if (registrationUser.Password != registrationUser.Password)
+                return BadRequest("Пароли не совпадают");
             return Ok();
         }
 
-        private Boolean Registration(RegistrationModel registrationUser)
+        private void Registration(RegistrationModel registrationUser)
         {
-            if (registrationUser.Password != registrationUser.Password)
-                return false;
             users.Create(new DB.Models.User()
             {
                 Name = registrationUser.Name,
@@ -49,7 +46,6 @@ namespace Stock.WebAPI.Controllers.Users
                 Role = Role.User
             });
             db.Save();
-            return true;
         }
     }
 }

@@ -13,12 +13,12 @@ using Stock.DB.Repositories;
 using Stock.DB.Models;
 using Stock.DB;
 using Stock.WebAPI.Models;
+using System.Security.Claims;
 
 namespace Stock.WebAPI.Users.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
-    [ApiController]
     public class AuthorizationController : Controller
     {
         private readonly IConfiguration configuration;
@@ -49,20 +49,28 @@ namespace Stock.WebAPI.Users.Controllers
         }
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult<String> Get()
+        public IActionResult Get()
         {
-            return "hello world";
+            return Content("Hello on my page!");
         }
 
         private string BuildToken(User user)
         {
+            var claims = new[] {
+                new Claim(JwtRegisteredClaimNames.Sub, user.Name),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim(JwtRegisteredClaimNames.Sub, user.Login),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
+
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(configuration["Jwt:Issuer"],
-              configuration["Jwt:Issuer"],
-              expires: DateTime.Now.AddMinutes(30),
-              signingCredentials: creds);
+                configuration["Jwt:Issuer"],
+                claims,
+                expires: DateTime.Now.AddMinutes(30),
+                signingCredentials: creds);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
@@ -71,7 +79,7 @@ namespace Stock.WebAPI.Users.Controllers
         {
             IEnumerable<User> allUsers = this.users.GetList();
 
-            User user = allUsers.FirstOrDefault((currentUser) => 
+            User user = allUsers.FirstOrDefault((currentUser) =>
             {
                 if (currentUser.Login == login.Username && currentUser.Password == login.Password)
                     return true;
