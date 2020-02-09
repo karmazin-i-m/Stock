@@ -42,7 +42,7 @@ namespace Stock.WebAPI.Users.Controllers
             if (user != null)
             {
                 var tokenString = BuildToken(user);
-                response = Ok(new { token = tokenString, User = user });
+                response = Ok(new { token = tokenString, id = user.Id, login = user.Login, role = user.Role, name = user.Name });
             }
 
             return response;

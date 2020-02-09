@@ -62,6 +62,7 @@
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Interfaces\IPageResolver.cs" />
     <Compile Include="Interfaces\IViewModelsResolver.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Navigator\Navigation.cs" />
     <Compile Include="Navigator\PagesResolver.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />

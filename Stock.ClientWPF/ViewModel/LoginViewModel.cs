@@ -70,7 +70,9 @@ namespace Stock.ClientWPF.ViewModel
                         MessageBox.Show(e.Message);
                         return;
                     }
-                    MessageBox.Show(json);
+                    User user = JsonConvert.DeserializeObject<User>(json);
+
+                    MessageBox.Show($"Name = {user.Name}, id = {user.Id}, login = {user.Login} \n Token: {user.Token}");
 
                     Navigation.Navigate(Navigation.HomePageAlias, HomePageViewModel);
                 });
