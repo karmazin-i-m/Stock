@@ -60,10 +60,17 @@ namespace Stock.ClientWPF.ViewModel
                     LoginModel loginModel = new LoginModel() { Username = Login, Password = Password };
                     HttpClient client = new HttpClient();
 
-
-                    String json = JsonConvert.SerializeObject(loginModel, Formatting.Indented);
-
-                    await PostRequestAsync(loginModel);
+                    String json;
+                    try
+                    {
+                        json = await PostRequestAsync("http://localhost:20895/api/authorization", loginModel);
+                    }
+                    catch (WebException e)
+                    {
+                        MessageBox.Show(e.Message);
+                        return;
+                    }
+                    MessageBox.Show(json);
 
                     Navigation.Navigate(Navigation.HomePageAlias, HomePageViewModel);
                 });
@@ -77,31 +84,21 @@ namespace Stock.ClientWPF.ViewModel
 
         public LoginViewModel()
         {
-            _resolver = new ViewModelsResolver();
+            _resolver = ViewModelsResolver.GetInstance();
 
             homePageViewModel = _resolver.GetViewModelInstance(HomeViewModelAlias);
-
-            //InitializeCommands();
         }
 
-        //private void InitializeCommands()
-        //{
-        //    GoToHomePgeCommand = new RelayCommand<INotifyPropertyChanged>((INotifyPropertyChanged) =>
-        //    {
-
-        //    });
-        //}
-
-        private static async Task PostRequestAsync(LoginModel loginModel)
+        private async Task<String> PostRequestAsync(String uri, Object serializeObj, String contentType = "application/json")
         {
-            WebRequest request = WebRequest.Create("http://localhost:20895/api/authorization");
+            WebRequest request = WebRequest.Create(uri);
             request.Method = "POST"; // для отправки используется метод Post
-                                     // данные для отправки
-            string data = JsonConvert.SerializeObject(loginModel, Formatting.Indented);
+            // данные для отправки
+            string data = JsonConvert.SerializeObject(serializeObj, Formatting.Indented);
             // преобразуем данные в массив байтов
             byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(data);
             // устанавливаем тип содержимого - параметр ContentType
-            request.ContentType = "application/json";
+            request.ContentType = contentType;
             // Устанавливаем заголовок Content-Length запроса - свойство ContentLength
             request.ContentLength = byteArray.Length;
 
@@ -111,15 +108,17 @@ namespace Stock.ClientWPF.ViewModel
                 dataStream.Write(byteArray, 0, byteArray.Length);
             }
 
+            String stringResponse;
             WebResponse response = await request.GetResponseAsync();
             using (Stream stream = response.GetResponseStream())
             {
                 using (StreamReader reader = new StreamReader(stream))
                 {
-                    MessageBox.Show(reader.ReadToEnd());
+                    stringResponse = reader.ReadToEnd();
                 }
             }
             response.Close();
+            return stringResponse;
         }
     }
 }

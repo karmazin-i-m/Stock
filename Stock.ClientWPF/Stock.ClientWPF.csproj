@@ -66,6 +66,7 @@
     <Compile Include="Navigator\PagesResolver.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\UserModel.cs" />
     <Compile Include="ViewModel\ViewModelsResolver.cs" />
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>

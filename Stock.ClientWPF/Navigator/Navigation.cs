@@ -79,7 +79,7 @@ namespace Stock.ClientWPF.Navigator
 
         private Navigation()
         {
-            _resolver = new PagesResolver();
+            _resolver = PagesResolver.GetInstance();
         }
 
         private static Navigation Instance

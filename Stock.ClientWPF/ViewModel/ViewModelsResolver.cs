@@ -11,8 +11,10 @@ namespace Stock.ClientWPF.ViewModel
     public class ViewModelsResolver : IViewModelsResolver
     {
         private readonly Dictionary<string, Func<INotifyPropertyChanged>> _vmResolvers = new Dictionary<string, Func<INotifyPropertyChanged>>();
+        private static ViewModelsResolver instance;
+        private static readonly Object _lock = new object();
 
-        public ViewModelsResolver()
+        private ViewModelsResolver()
         {
             _vmResolvers.Add(LoginViewModel.HomeViewModelAlias, () => new HomeViewModel());
         }
@@ -20,6 +22,20 @@ namespace Stock.ClientWPF.ViewModel
         public INotifyPropertyChanged GetViewModelInstance(string alias)
         {
                 return _vmResolvers[alias]();
+        }
+
+        public static ViewModelsResolver GetInstance()
+        {
+            if (instance == null)
+            {
+                lock (_lock)
+                {
+                    if (instance == null)
+                        instance = new ViewModelsResolver();
+                }
+            }
+
+            return instance;
         }
     }
 }

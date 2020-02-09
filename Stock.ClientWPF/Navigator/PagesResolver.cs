@@ -12,8 +12,9 @@ namespace Stock.ClientWPF.Navigator
     public class PagesResolver : IPageResolver
     {
         private readonly Dictionary<string, Func<Page>> _pagesResolvers = new Dictionary<string, Func<Page>>();
-
-        public PagesResolver()
+        private static readonly Object _lock = new object();
+        private static PagesResolver instance;
+        private PagesResolver()
         {
             _pagesResolvers.Add(Navigation.HomePageAlias, () => new HomePage());
         }
@@ -21,6 +22,20 @@ namespace Stock.ClientWPF.Navigator
         public Page GetPageInstance(string alias)
         {
             return _pagesResolvers[alias]();
+        }
+
+        public static PagesResolver GetInstance()
+        {
+            if (instance == null)
+            {
+                lock (_lock)
+                {
+                    if (instance == null)
+                        instance = new PagesResolver();
+                }
+            }
+
+            return instance;
         }
     }
 }
