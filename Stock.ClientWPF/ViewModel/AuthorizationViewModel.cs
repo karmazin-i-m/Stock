@@ -7,7 +7,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace Stock.ClientWPF.ViewModel
 {
@@ -15,7 +17,8 @@ namespace Stock.ClientWPF.ViewModel
     {
         private String login;
         private String password;
-        private String logo;
+        //private String logo;
+        private String pageSourse = "LoginPage.xaml";
 
         public String Login
         {
@@ -35,13 +38,22 @@ namespace Stock.ClientWPF.ViewModel
                 OnPropertyChanged("Password");
             }
         }
-        public String Logo
+        //public String Logo
+        //{
+        //    get { return logo; }
+        //    set 
+        //    {
+        //        logo = value;
+        //        OnPropertyChanged("Logo");
+        //    }
+        //}
+        public String PageSourse
         {
-            get { return logo; }
-            set 
+            get { return pageSourse; }
+            set
             {
-                logo = value;
-                OnPropertyChanged("Logo");
+                pageSourse = value;
+                OnPropertyChanged("PageSourse");
             }
         }
 
@@ -54,14 +66,14 @@ namespace Stock.ClientWPF.ViewModel
                     (loginCommand = new RelayCommand(obj =>
                     {
                         LoginModel loginModel = new LoginModel() { Username = Login, Password = Password};
-                        Logo = loginModel.Username+" "+loginModel.Password;
+                        PageSourse = "LoginPage.xaml";
+                        
                     }));
             }
         }
 
-
-
         public event PropertyChangedEventHandler PropertyChanged;
+
         public void OnPropertyChanged([CallerMemberName]string prop = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));

@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Stock.ClientWPF.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for HomePage.xaml
     /// </summary>
-    public partial class AutorizationWindow : Window
+    public partial class HomePage : Page
     {
-        public AutorizationWindow()
+        public HomePage()
         {
             InitializeComponent();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
