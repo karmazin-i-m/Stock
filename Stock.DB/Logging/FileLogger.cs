@@ -25,4 +25,4 @@ namespace Stock.DB.Logging
                File.AppendAllText("StockDBLog.txt", formatter(state, exception));
         }
     }
-}
+} 
