@@ -13,11 +13,10 @@ using System.Windows.Navigation;
 
 namespace Stock.ClientWPF.ViewModel
 {
-    class AuthorizationViewModel : INotifyPropertyChanged
+    class AuthorizationViewModel : BaseViewModel
     {
         private String login;
         private String password;
-        //private String logo;
         private String pageSourse = "LoginPage.xaml";
 
         public String Login
@@ -38,15 +37,6 @@ namespace Stock.ClientWPF.ViewModel
                 OnPropertyChanged("Password");
             }
         }
-        //public String Logo
-        //{
-        //    get { return logo; }
-        //    set 
-        //    {
-        //        logo = value;
-        //        OnPropertyChanged("Logo");
-        //    }
-        //}
         public String PageSourse
         {
             get { return pageSourse; }
@@ -57,26 +47,18 @@ namespace Stock.ClientWPF.ViewModel
             }
         }
 
-        private RelayCommand loginCommand;
-        public RelayCommand LoginCommand
-        {
-            get
-            {
-                return loginCommand ??
-                    (loginCommand = new RelayCommand(obj =>
-                    {
-                        LoginModel loginModel = new LoginModel() { Username = Login, Password = Password};
-                        PageSourse = "LoginPage.xaml";
-                        
-                    }));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-        }
+        //private RelayCommand loginCommand;
+        //public RelayCommand LoginCommand
+        //{
+        //    get
+        //    {
+        //        return loginCommand ??
+        //            (loginCommand = new RelayCommand(obj =>
+        //            {
+        //                LoginModel loginModel = new LoginModel() { Username = Login, Password = Password};
+        //                PageSourse = "LoginPage.xaml";
+        //            }));
+        //    }
+        //}
     }
 }

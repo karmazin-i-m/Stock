@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Stock.ClientWPF.Navigator;
+using Stock.ClientWPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +29,9 @@ namespace Stock.ClientWPF.View
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Navigation.Service = Frame.NavigationService;
 
+            DataContext = new MainViewModel(new ViewModelsResolver());
         }
     }
 }
