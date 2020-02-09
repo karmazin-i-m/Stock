@@ -30,8 +30,6 @@ namespace Stock.ClientWPF.View
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Navigation.Service = Frame.NavigationService;
-
-            DataContext = new MainViewModel(new ViewModelsResolver());
         }
     }
 }

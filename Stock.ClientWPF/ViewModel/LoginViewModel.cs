@@ -6,8 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -19,7 +21,6 @@ namespace Stock.ClientWPF.ViewModel
     {
         private String login;
         private String password;
-        private String pageSourse = "LoginPage.xaml";
 
         public String Login
         {
@@ -39,32 +40,34 @@ namespace Stock.ClientWPF.ViewModel
                 OnPropertyChanged("Password");
             }
         }
-        public String PageSourse
-        {
-            get { return pageSourse; }
-            set
-            {
-                pageSourse = value;
-                OnPropertyChanged("PageSourse");
-            }
-        }
 
         public static readonly string HomeViewModelAlias = "HomePageVM";
         private readonly IViewModelsResolver _resolver;
         private readonly INotifyPropertyChanged homePageViewModel;
 
-        private ICommand _goToHomePgeCommand;
+        private ICommand goToHomePgeCommand;
 
         public ICommand GoToHomePgeCommand
         {
             get
             {
-                return _goToHomePgeCommand;
-            }
-            set
-            {
-                _goToHomePgeCommand = value;
-                OnPropertyChanged("GoToHomePgeCommand");
+                return goToHomePgeCommand ?? new RelayCommand<INotifyPropertyChanged>((INotifyPropertyChanged) =>
+                {
+                    LoginModel loginModel = new LoginModel() { Username = Login, Password = Password };
+                    HttpClient client = new HttpClient();
+
+                    
+                    var json = serializer.Serialize(new { id = 123, sum = new { amount = 0, currency = 643 } });
+                    var response = request.Post(address, json, contentType);
+
+                    using (var stream = client.GetAsync("http://localhost:20895/api/authorization"))
+                    {
+                        String html = stream.Result.Content.ReadAsStringAsync().Result;
+                        MessageBox.Show(html+ $"{loginModel.Username} {loginModel.Password}");
+                    }
+
+                    Navigation.Navigate(Navigation.HomePageAlias, HomePageViewModel);
+                });
             }
         }
 
@@ -79,29 +82,15 @@ namespace Stock.ClientWPF.ViewModel
 
             homePageViewModel = _resolver.GetViewModelInstance(HomeViewModelAlias);
 
-            InitializeCommands();
+            //InitializeCommands();
         }
 
-        private void InitializeCommands()
-        {
-            GoToHomePgeCommand = new RelayCommand<INotifyPropertyChanged>((INotifyPropertyChanged) =>
-            {
-                Navigation.Navigate(Navigation.HomePageAlias, HomePageViewModel);
-            });
-        }
+        //private void InitializeCommands()
+        //{
+        //    GoToHomePgeCommand = new RelayCommand<INotifyPropertyChanged>((INotifyPropertyChanged) =>
+        //    {
+               
+        //    });
+        //}
     }
 }
-
-//private ICommand loginCommand;
-//public RelayCommand LoginCommand
-//{
-//    get
-//    {
-//        return loginCommand ??
-//            (loginCommand = new RelayCommand(obj =>
-//            {
-//                LoginModel loginModel = new LoginModel() { Username = Login, Password = Password};
-//                PageSourse = "LoginPage.xaml";
-//            }));
-//    }
-//}

@@ -24,11 +24,6 @@ namespace Stock.ClientWPF.View
         public LoginPage()
         {
             InitializeComponent();
-            Loaded += LoginPage_Loaded;
-        }
-
-        private void LoginPage_Loaded(object sender, RoutedEventArgs e)
-        {
             DataContext = new LoginViewModel();
         }
     }

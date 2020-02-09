@@ -149,3 +149,67 @@ Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.G
 Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
 Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 1471.6985ms
 Request finished in 2255.7765ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 1876.5283ms
+Request finished in 3230.0001ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 1294.0341ms
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 1294.0341ms
+Request finished in 1984.3062ms 200 text/plain; charset=utf-8
+Request finished in 1984.3069ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/favicon.ico  
+Request finished in 9.7495ms 404 
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 3.3234ms
+Request finished in 9.2156ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 GET http://localhost:20895/favicon.ico  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Request finished in 524.5761ms 404 
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 1077.2387ms
+Request finished in 1777.9414ms 200 text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 1075.3387ms
+Request finished in 1779.2935ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2.1658ms
+Request finished in 6.6703ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 1035.6357ms
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 1033.6862ms
+Request finished in 1945.6532ms 200 text/plain; charset=utf-8
+Request finished in 1419.8321ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 4.6053ms
+Request finished in 8.9803ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 1273.9868ms
+Request finished in 2017.3166ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2.8511ms
+Request finished in 11.8843ms 200 text/plain; charset=utf-8
