@@ -8,6 +8,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="300"
       Title="LoginPage">
+    <Page.DataContext>
+        <viewmodel:LoginViewModel/>
+    </Page.DataContext>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -17,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Name="LogoBlock" Grid.Row="0" Text="{Binding Path=Logo}" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center" Margin="10"/>
-        <Button Name="LogInButton" Grid.Row="2" Command="{Binding Path=GoToPage2Command}" CommandParameter="{Binding Page2ViewModel}" Content="Войти" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"/>
+        <Button Name="LogInButton" Grid.Row="2" Command="{Binding GoToHomePgeCommand}" CommandParameter="{Binding HomePageViewModel}" Content="Войти" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"/>
         <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>

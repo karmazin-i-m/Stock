@@ -70,7 +70,7 @@
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\AuthorizationWindow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -79,9 +79,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\LoginModel.cs" />
-    <Compile Include="ViewModel\AuthorizationViewModel.cs" />
-    <Compile Include="View\AuthorizationWindow.xaml.cs">
-      <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\HomePage.xaml">

@@ -11,8 +11,7 @@ namespace Stock.ClientWPF.Navigator
 {
     public sealed class Navigation
     {
-        public static readonly string Page1Alias = "Page1";
-        public static readonly string Page2Alias = "Page2";
+        public static readonly string HomePageAlias = "HomePage";
 
         private NavigationService _navService;
         private readonly IPageResolver _resolver;

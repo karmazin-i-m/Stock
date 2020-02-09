@@ -14,8 +14,7 @@ namespace Stock.ClientWPF.ViewModel
 
         public ViewModelsResolver()
         {
-            _vmResolvers.Add(MainViewModel.Page1ViewModelAlias, () => new AuthorizationViewModel());
-            _vmResolvers.Add(MainViewModel.Page2ViewModelAlias, () => new HomeViewModel());
+            _vmResolvers.Add(LoginViewModel.HomeViewModelAlias, () => new HomeViewModel());
         }
 
         public INotifyPropertyChanged GetViewModelInstance(string alias)

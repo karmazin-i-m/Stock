@@ -29,7 +29,7 @@ namespace Stock.ClientWPF.View
 
         private void LoginPage_Loaded(object sender, RoutedEventArgs e)
         {
-            DataContext = new MainViewModel(new ViewModelsResolver());
+            DataContext = new LoginViewModel();
         }
     }
 }

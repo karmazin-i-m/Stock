@@ -20,7 +20,6 @@ namespace Stock.ClientWPF.ViewModel
 
         private readonly IViewModelsResolver _resolver;
 
-        private ICommand _goToPathCommand;
 
         private ICommand _goToPage1Command;
 
@@ -28,16 +27,6 @@ namespace Stock.ClientWPF.ViewModel
 
         private readonly INotifyPropertyChanged _p1ViewModel;
         private readonly INotifyPropertyChanged _p2ViewModel;
-
-        public ICommand GoToPathCommand
-        {
-            get { return _goToPathCommand; }
-            set
-            {
-                _goToPathCommand = value;
-                OnPropertyChanged("GoToPathCommand");
-            }
-        }
 
         public ICommand GoToPage1Command
         {
@@ -76,40 +65,20 @@ namespace Stock.ClientWPF.ViewModel
         {
             _resolver = resolver;
 
-            _p1ViewModel = _resolver.GetViewModelInstance(Page1ViewModelAlias);
-            _p2ViewModel = _resolver.GetViewModelInstance(Page2ViewModelAlias);
+            //_p1ViewModel = _resolver.GetViewModelInstance(Page1ViewModelAlias);
+            //_p2ViewModel = _resolver.GetViewModelInstance(Page2ViewModelAlias);
 
             InitializeCommands();
         }
 
         private void InitializeCommands()
         {
-
-            GoToPathCommand = new RelayCommand<string>(GoToPathCommandExecute);
-
             GoToPage1Command = new RelayCommand<INotifyPropertyChanged>(GoToPage1CommandExecute);
-
-            GoToPage2Command = new RelayCommand<INotifyPropertyChanged>(GoToPage2CommandExecute);
-        }
-
-        private void GoToPathCommandExecute(string alias)
-        {
-            if (string.IsNullOrWhiteSpace(alias))
-            {
-                return;
-            }
-
-            Navigation.Navigate(alias);
         }
 
         private void GoToPage1CommandExecute(INotifyPropertyChanged viewModel)
         {
-            Navigation.Navigate(Navigation.Page1Alias, Page1ViewModel);
-        }
-
-        private void GoToPage2CommandExecute(INotifyPropertyChanged viewModel)
-        {
-            Navigation.Navigate(Navigation.Page2Alias, Page1ViewModel);
+            Navigation.Navigate(Navigation.HomePageAlias, Page1ViewModel);
         }
     }
 }

@@ -20,9 +20,9 @@ namespace Stock.ClientWPF.View
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class AutorizationWindow : Window
+    public partial class MainWindow : Window
     {
-        public AutorizationWindow()
+        public MainWindow()
         {
             InitializeComponent();
         }

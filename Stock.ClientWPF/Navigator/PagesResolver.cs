@@ -15,8 +15,7 @@ namespace Stock.ClientWPF.Navigator
 
         public PagesResolver()
         {
-            _pagesResolvers.Add(Navigation.Page1Alias, () => new LoginPage());
-            _pagesResolvers.Add(Navigation.Page2Alias, () => new HomePage());
+            _pagesResolvers.Add(Navigation.HomePageAlias, () => new HomePage());
         }
 
         public Page GetPageInstance(string alias)
