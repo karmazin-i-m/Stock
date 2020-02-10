@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Stock.ClientWPF.ViewModel
 {
-    public abstract class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
 
         public event PropertyChangedEventHandler PropertyChanged;

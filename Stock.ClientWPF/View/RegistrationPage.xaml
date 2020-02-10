@@ -4,9 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Stock.ClientWPF.View"
+      xmlns:viewmodel="clr-namespace:Stock.ClientWPF.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="300"
       Title="Registration">
+    <Page.DataContext>
+        <viewmodel:RegistrationViewModel/>
+    </Page.DataContext>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -16,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Name="LogoBlock" Grid.Row="0" Text="ЛОГО" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center" Margin="10"/>
-        <Button Name="LogInButton" Grid.Row="2" Command="{Binding GoToLoginPageCommand}" Content="Регистрация" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"/>
+        <Button Name="RegButton" Grid.Row="2" Command="{Binding GoToLoginPageCommand}" CommandParameter="{Binding BasePageViewModel}" Content="Регистрация" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"/>
         <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>

@@ -24,7 +24,6 @@ namespace Stock.ClientWPF.View
         public RegistrationPage()
         {
             InitializeComponent();
-            DataContext = new RegistrationViewModel();
         }
     }
 }

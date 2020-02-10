@@ -32,7 +32,7 @@ namespace Stock.ClientWPF.Helpers
         [DebuggerStepThrough]
         public bool CanExecute(object parameter)
         {
-            return _canExecute == null ? true : _canExecute(parameter);
+            return _canExecute == null ? true : _canExecute.Invoke(parameter);
         }
 
         public event EventHandler CanExecuteChanged
@@ -46,7 +46,7 @@ namespace Stock.ClientWPF.Helpers
             if (parameter is T)
             {
                 var typedParameter = (T)parameter;
-                _execute(typedParameter);
+                _execute.Invoke(typedParameter);
             }
         }
     }

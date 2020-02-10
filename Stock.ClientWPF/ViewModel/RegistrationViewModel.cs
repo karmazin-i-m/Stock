@@ -12,9 +12,11 @@ using System.Windows.Input;
 
 namespace Stock.ClientWPF.ViewModel
 {
-    class RegistrationViewModel :BaseViewModel
+    class RegistrationViewModel : BaseViewModel
     {
         public static readonly string LoginViewModelAlias = "LoginPageVM";
+
+        private readonly INotifyPropertyChanged basePageViewModel;
 
         private ICommand goToLoginPageCommand;
 
@@ -22,19 +24,17 @@ namespace Stock.ClientWPF.ViewModel
         {
             get
             {
-                return goToLoginPageCommand ?? new RelayCommand<INotifyPropertyChanged>((INotifyPropertyChanged) =>
-                {
+                return goToLoginPageCommand ??
+                    (goToLoginPageCommand = new RelayCommand<INotifyPropertyChanged>((INotifyPropertyChanged) =>
+                    {
+                        Navigation.Service.GoBack();
+                    }));
+            }
+        }
 
-                    MessageBox.Show("121241242");
-                    Navigation.Service.GoBack();
-                    //Navigation.Navigate(Navigation.LoginPageAlias, LoginPageViewModel);
-                });
-            }
-            set
-            {
-                goToLoginPageCommand = value;
-                OnPropertyChanged("GoToLoginPageCommand");
-            }
+        public INotifyPropertyChanged BasePageViewModel 
+        { 
+            get { return new BaseViewModel(); }
         }
     }
 }

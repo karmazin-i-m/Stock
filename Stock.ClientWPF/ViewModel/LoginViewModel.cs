@@ -90,8 +90,6 @@ namespace Stock.ClientWPF.ViewModel
             {
                 return goToRegistrationPageCommand ?? new RelayCommand<INotifyPropertyChanged>((INotifyPropertyChanged) =>
                 {
-
-
                     Navigation.Navigate(Navigation.RegistrationPageAlias, RegistrationPageViewModel);
                 });
             }
