@@ -19,18 +19,13 @@ namespace Stock.WebAPI.Controllers.Users
     {
         private readonly IUnitOfWork db;
         private readonly IRepository<User> users;
-        private static readonly Object _lock = new object();
 
         public RegistrationController(IUnitOfWork db)
         {
             this.db = db;
             this.users = db.Users;
-        }
-        /// <summary>
-        /// ПРинимает запрос на регистрацию пользователя
-        /// </summary>
-        /// <param name="registrationUser"></param>
-        /// <returns></returns>
+        }   
+
         [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> RegistrationUser([FromBody]RegistrationModel registrationUser)
@@ -39,11 +34,7 @@ namespace Stock.WebAPI.Controllers.Users
                 return BadRequest("Пароли не совпадают");
             return Ok(await RegistrationAsync(registrationUser));
         }
-        /// <summary>
-        /// Регистрирует пользователя в БД
-        /// </summary>
-        /// <param name="registrationUser"></param>
-        /// <returns></returns>
+
         private async Task<Int32> RegistrationAsync(RegistrationModel registrationUser)
         {
             Int32 answer = await users.CreateAsync(new DB.Models.User()
@@ -54,8 +45,7 @@ namespace Stock.WebAPI.Controllers.Users
                 Login = registrationUser.Login,
                 Role = Role.User
             });
-            lock (_lock)
-                db.Save();
+            db.SaveAsync();
             return answer;
         }
     }
