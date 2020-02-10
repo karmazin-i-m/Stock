@@ -19,12 +19,13 @@ namespace Stock.WebAPI.Controllers.Users
     {
         private readonly IUnitOfWork db;
         private readonly IRepository<User> users;
+        private static readonly Object _lock = new object();
 
         public RegistrationController(IUnitOfWork db)
         {
             this.db = db;
             this.users = db.Users;
-        }   
+        }
         /// <summary>
         /// ПРинимает запрос на регистрацию пользователя
         /// </summary>
@@ -53,7 +54,8 @@ namespace Stock.WebAPI.Controllers.Users
                 Login = registrationUser.Login,
                 Role = Role.User
             });
-            db.Save();
+            lock (_lock)
+                db.Save();
             return answer;
         }
     }
