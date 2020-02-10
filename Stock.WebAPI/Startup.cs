@@ -30,7 +30,9 @@ namespace Stock.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //DI на UnitOfWork
             services.AddSingleton<IUnitOfWork, UnitOfWork>();
+            //DI на авторизацию
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -46,7 +48,7 @@ namespace Stock.WebAPI
                     };
                 });
 
-
+            //DI на БД
             services.AddDbContext<StockContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -55,6 +57,7 @@ namespace Stock.WebAPI
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            //Подключение логирования
             loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "WebAPILog.txt"));
             var logger = loggerFactory.CreateLogger("FileLogger");
 
@@ -62,6 +65,7 @@ namespace Stock.WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
             app.UseAuthentication();
             app.UseMvc();
         }

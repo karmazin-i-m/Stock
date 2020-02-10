@@ -21,9 +21,9 @@ namespace Stock.WebAPI.Users.Controllers
     [Route("api/[controller]")]
     public class AuthorizationController : Controller
     {
-        private readonly IConfiguration configuration;
-        private readonly IUnitOfWork db;
-        private readonly IRepository<User> users;
+        private readonly IConfiguration configuration;  //Конфигурация нужна для слздания токена
+        private readonly IUnitOfWork db;                //Инкапсулированная БД
+        private readonly IRepository<User> users;       //Работа с БД
 
         public AuthorizationController(IConfiguration configuration, IUnitOfWork db)
         {
@@ -31,7 +31,11 @@ namespace Stock.WebAPI.Users.Controllers
             this.db = db;
             users = db.Users;
         }
-
+        /// <summary>
+        /// Принимает запрос на авторизацию и возвращает токен пользователю, если авторизация успешна.
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
         [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> CreateTokenAsync([FromBody]LoginModel login)
@@ -47,13 +51,21 @@ namespace Stock.WebAPI.Users.Controllers
 
             return response;
         }
+        /// <summary>
+        /// Теставая стартовая страница.
+        /// </summary>
+        /// <returns></returns>
         [AllowAnonymous]
         [HttpGet]
         public IActionResult Get()
         {
             return Content("Hello on my page!");
         }
-
+        /// <summary>
+        /// Метод создает токен на основе данных пользователя.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         private string BuildToken(User user)
         {
             var claims = new[] {
@@ -74,7 +86,11 @@ namespace Stock.WebAPI.Users.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
+        /// <summary>
+        /// Метод проводит авторизацию пользователя, проверяет данные в БД
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
         private async Task<User> Authenticate(LoginModel login)
         {
             IEnumerable<User> allUsers = await this.users.GetListAsync();

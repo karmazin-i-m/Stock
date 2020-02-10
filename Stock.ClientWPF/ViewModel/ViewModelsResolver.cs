@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Stock.ClientWPF.ViewModel
 {
+    /// <summary>
+    /// Класс реализующий коллекцию всех вьюмоделей
+    /// </summary>
     public class ViewModelsResolver : IViewModelsResolver
     {
         private static readonly Dictionary<string, Func<INotifyPropertyChanged>> _vmResolvers = new Dictionary<string, Func<INotifyPropertyChanged>>();

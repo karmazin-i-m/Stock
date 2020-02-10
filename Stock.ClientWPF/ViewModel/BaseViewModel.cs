@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Stock.ClientWPF.ViewModel
 {
+    /// <summary>
+    /// Базовый класс Для всех ViewModel
+    /// </summary>
     public class BaseViewModel : INotifyPropertyChanged
     {
 

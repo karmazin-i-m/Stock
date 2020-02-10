@@ -9,6 +9,9 @@ using System.Windows.Controls;
 
 namespace Stock.ClientWPF.Navigator
 {
+    /// <summary>
+    /// класс хранящий данные о всех страницах
+    /// </summary>
     public class PagesResolver : IPageResolver
     {
         private static readonly Dictionary<string, Func<Page>> _pagesResolvers = new Dictionary<string, Func<Page>>();

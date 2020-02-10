@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Stock.ClientWPF.Interfaces
 {
+    /// <summary>
+    /// Интерфейс для коллеции моделей страниц
+    /// </summary>
     public interface IViewModelsResolver
     {
         INotifyPropertyChanged GetViewModelInstance(string alias);

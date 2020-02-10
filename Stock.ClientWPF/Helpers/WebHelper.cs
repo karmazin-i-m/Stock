@@ -12,6 +12,13 @@ namespace Stock.ClientWPF.Helpers
 {
     public static class WebHelper
     {
+        /// <summary>
+        /// Метод ля создания пост запроса на ресурс
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <param name="serializeObj"></param>
+        /// <param name="contentType"></param>
+        /// <returns></returns>
         public static async Task<String> PostRequestAsync(String uri, Object serializeObj, String contentType = "application/json")
         {
             WebRequest request = WebRequest.Create(uri);

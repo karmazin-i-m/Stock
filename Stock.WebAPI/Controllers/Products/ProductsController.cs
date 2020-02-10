@@ -24,7 +24,11 @@ namespace Stock.WebAPI.Controllers.Products
             this.db = db;
             this.products = db.Products;
         }
-
+        /// <summary>
+        /// Добавляет продукт в Базу
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns></returns>
         [Authorize]
         [HttpPost]
         public async Task<IActionResult> AddProductAsync([FromBody]Product product)
@@ -33,7 +37,11 @@ namespace Stock.WebAPI.Controllers.Products
             await db.SaveAsync();
             return Ok();
         }
-
+        /// <summary>
+        /// Возвращает продукт по ид
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProductAsync(Int32 id)
@@ -41,14 +49,21 @@ namespace Stock.WebAPI.Controllers.Products
             Product product = await products.GetAsync(id);
             return Json(product);
         }
-
+        /// <summary>
+        /// ВОзвращает коллекцию всех продуктов
+        /// </summary>
+        /// <returns></returns>
         [Authorize]
         [HttpGet()]
         public async Task<IEnumerable<Product>> GetProductsListAsync()
         {
             return await products.GetListAsync();
         }
-
+        /// <summary>
+        /// Обновляет данные о продукте
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns></returns>
         [Authorize]
         [HttpPut]
         public IActionResult UpdateProduct([FromBody]Product product)
@@ -57,7 +72,11 @@ namespace Stock.WebAPI.Controllers.Products
             db.Save();
             return Ok();
         }
-
+        /// <summary>
+        /// Удаляет продукт из базы
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Authorize]
         [HttpDelete("{id}")]
         public IActionResult DeleteProduct(Int32 id)

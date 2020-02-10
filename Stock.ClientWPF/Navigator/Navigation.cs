@@ -9,8 +9,12 @@ using System.Windows.Navigation;
 
 namespace Stock.ClientWPF.Navigator
 {
+    /// <summary>
+    /// Класс совершающий нафигацию по страницам.
+    /// </summary>
     public sealed class Navigation
     {
+        
         public static readonly string HomePageAlias = "HomePage";
         public static readonly string RegistrationPageAlias = "RegistrationPage";
 

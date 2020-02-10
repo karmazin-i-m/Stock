@@ -8,6 +8,10 @@ using System.Windows.Input;
 
 namespace Stock.ClientWPF.Helpers
 {
+    /// <summary>
+    /// Класс реализует интерфейс для создания комманд
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     class RelayCommand<T> : ICommand
     {
         private readonly Action<T> _execute = null;
