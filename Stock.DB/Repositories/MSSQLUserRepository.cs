@@ -17,13 +17,13 @@ namespace Stock.DB.Repositories
         public Int32 Create(User item)
         {
             db.Users.Add(item);
-            return db.Find<User>(item).Id;
+            return db.Users.FirstAsync((user) => user.Login == item.Login).Id;
         }
 
         public async Task<Int32> CreateAsync(User item)
         {
             await db.Users.AddAsync(item);
-            return db.Users.FindAsync(item).Id;
+            return db.Users.FirstAsync((user) => user.Login == item.Login).Id;
         }
 
         public Boolean Delete(int id)

@@ -15,6 +15,7 @@ namespace Stock.DB.Services
         private IRepository<User> usersRepositories;
         private IRepository<Product> productsRepositories;
         private IRepository<Order> ordersRepositories;
+        private static readonly Object _lock = new object();
 
         public IRepository<User> Users
         {
@@ -51,7 +52,8 @@ namespace Stock.DB.Services
 
         public Boolean Save()
         {
-            db.SaveChanges();
+            lock(_lock)
+                db.SaveChanges();
             return true;
         }
         public async Task<bool> SaveAsync()
