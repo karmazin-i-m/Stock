@@ -410,4 +410,302 @@ INSERT INTO [Users] ([Email], [Login], [Name], [Password], [Role])
 VALUES (@p0, @p1, @p2, @p3, @p4);
 SELECT [Id]
 FROM [Users]
-WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (133ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'Optimized query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ToSequence(Task<User> First(
+                source: IAsyncEnumerable<User> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+                        FROM [Users] AS [user]
+                        WHERE [user].[Login] = @__item_Login_0, 
+                    shaper: UnbufferedEntityShaper<User>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)Executed DbCommand (78ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)A data reader was disposed.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0Executed DbCommand (2ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)Executed DbCommand (10ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (190ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'Optimized query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ToSequence(Task<User> First(
+                source: IAsyncEnumerable<User> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+                        FROM [Users] AS [user]
+                        WHERE [user].[Login] = @__item_Login_0, 
+                    shaper: UnbufferedEntityShaper<User>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0Executed DbCommand (91ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [Login], [Name], [Password], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [Login], [Name], [Password], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (249ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'Optimized query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ToSequence(Task<User> First(
+                source: IAsyncEnumerable<User> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+                        FROM [Users] AS [user]
+                        WHERE [user].[Login] = @__item_Login_0, 
+                    shaper: UnbufferedEntityShaper<User>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0Executed DbCommand (66ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [Login], [Name], [Password], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [Login], [Name], [Password], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0Executed DbCommand (15ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)Executed DbCommand (65ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (178ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'Optimized query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ToSequence(Task<User> First(
+                source: IAsyncEnumerable<User> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+                        FROM [Users] AS [user]
+                        WHERE [user].[Login] = @__item_Login_0, 
+                    shaper: UnbufferedEntityShaper<User>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0Executed DbCommand (82ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [Login], [Name], [Password], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [Login], [Name], [Password], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0Executed DbCommand (1ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)Executed DbCommand (68ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)Executed DbCommand (13ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)Executed DbCommand (16ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0Executed DbCommand (4ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0Executed DbCommand (48ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)Executed DbCommand (13ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.

@@ -45,7 +45,7 @@ namespace Stock.WebAPI.Controllers.Users
                 Login = registrationUser.Login,
                 Role = Role.User
             });
-            db.Save();
+            db.SaveAsync();
             return answer;
         }
     }
