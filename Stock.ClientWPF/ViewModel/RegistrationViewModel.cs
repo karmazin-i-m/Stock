@@ -52,7 +52,7 @@ namespace Stock.ClientWPF.ViewModel
                            return;
                        }
                        if (Navigation.Service.CanGoBack)
-                           Navigation.Service.GoBack();
+                           Navigation.GoBack();
                    }));
             }
         }

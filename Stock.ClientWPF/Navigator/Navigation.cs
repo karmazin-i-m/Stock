@@ -1,9 +1,12 @@
 ﻿using Stock.ClientWPF.Interfaces;
+using Stock.ClientWPF.View;
+using Stock.ClientWPF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
@@ -19,7 +22,8 @@ namespace Stock.ClientWPF.Navigator
         public static readonly string RegistrationPageAlias = "RegistrationPage";
         public static readonly string UserPageAlias = "UserPage";
 
-        private readonly List<string> _historic;
+        private readonly Stack<Page> pages;
+        private readonly Stack<BaseViewModel> viewModels;
 
         private NavigationService _navService;
         private readonly IPageResolver _resolver;
@@ -45,8 +49,18 @@ namespace Stock.ClientWPF.Navigator
             {
                 return;
             }
+            Instance.pages.Push(page as Page);
+            Instance.viewModels.Push(context as BaseViewModel);
 
             Instance._navService.Navigate(page, context);
+        }
+        public static void GoBack()
+        {
+            if (Instance.pages.Count < 1 | Instance.viewModels.Count < 1)
+                throw new Exception("В коллекциях недостаточно элементов");
+            Instance.pages.Pop();
+            Instance.viewModels.Pop();
+            Navigate(Instance.pages.Peek(), Instance.viewModels.Peek());
         }
 
         public static void Navigate(Page page)
@@ -89,6 +103,10 @@ namespace Stock.ClientWPF.Navigator
         private Navigation()
         {
             _resolver = PagesResolver.GetInstance();
+            pages = new Stack<Page>();
+            viewModels = new Stack<BaseViewModel>();
+            pages.Push(new LoginPage());
+            viewModels.Push(new LoginViewModel());
         }
 
         private static Navigation Instance
