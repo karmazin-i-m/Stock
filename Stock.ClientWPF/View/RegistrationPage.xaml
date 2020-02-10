@@ -1,0 +1,45 @@
+﻿<Page x:Class="Stock.ClientWPF.View.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Stock.ClientWPF.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="300"
+      Title="Registration">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="LogoBlock" Grid.Row="0" Text="ЛОГО" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center" Margin="10"/>
+        <Button Name="LogInButton" Grid.Row="2" Command="{Binding GoToLoginPageCommand}" Content="Регистрация" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"/>
+        <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="0.6*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Name="NameBox" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            <TextBox Name="LoginBox" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            <TextBox Name="EmailBox" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            <TextBox Name="PasswordBox" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            <TextBox Name="ConfirmPasswordBox" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            <TextBlock Name="NameBlock" Grid.Row="0" Grid.Column="0" Text="Имя" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center" />
+            <TextBlock Name="LoginBlock" Grid.Row="1" Grid.Column="0" Text="Логин" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock Name="EmailBlock" Grid.Row="2" Grid.Column="0" Text="E-mail" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock Name="PasswordBlock" Grid.Row="3" Grid.Column="0" Text="Пароль" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock Name="ConfirmPasswordBlock" Grid.Row="4" Grid.Column="0" Text="Повторите пароль" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Page>

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Stock.ClientWPF.Commands
+namespace Stock.ClientWPF.Helpers
 {
     class RelayCommand<T> : ICommand
     {

@@ -11,12 +11,13 @@ namespace Stock.ClientWPF.Navigator
 {
     public class PagesResolver : IPageResolver
     {
-        private readonly Dictionary<string, Func<Page>> _pagesResolvers = new Dictionary<string, Func<Page>>();
+        private static readonly Dictionary<string, Func<Page>> _pagesResolvers = new Dictionary<string, Func<Page>>();
         private static readonly Object _lock = new object();
         private static PagesResolver instance;
         private PagesResolver()
         {
             _pagesResolvers.Add(Navigation.HomePageAlias, () => new HomePage());
+            _pagesResolvers.Add(Navigation.RegistrationPageAlias, () => new RegistrationPage());
         }
 
         public Page GetPageInstance(string alias)

@@ -4,11 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Stock.ClientWPF.View"
-      xmlns:viewmodel="clr-namespace:Stock.ClientWPF.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="300"
       Title="LoginPage">
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.4*"/>
@@ -16,10 +15,11 @@
             <RowDefinition Height="0.3*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Name="LogoBlock" Grid.Row="0" Text="{Binding Path=Logo}" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center" Margin="10"/>
-        <Button Name="LogInButton" Grid.Row="2" Command="{Binding Path=GoToHomePgeCommand}" CommandParameter="{Binding HomePageViewModel}" Content="Войти" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"/>
+        <TextBlock Name="LogoBlock" Grid.Row="0" Text="ЛОГО" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center" Margin="10"/>
+        <Button Name="LogInButton" Grid.Row="2" Command="{Binding Path=GoToHomePageCommand}" CommandParameter="{Binding HomePageViewModel}" Content="Войти" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"/>
         <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
             <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
@@ -28,10 +28,11 @@
                 <ColumnDefinition Width="0.65*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Name="LoginBox" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Stretch"  TextWrapping="Wrap" Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="15"/>
-            <TextBox Name="PasswordBox" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"  TextWrapping="Wrap" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="15"/>
-            <TextBlock Name="LoginBlock" Grid.Row="0" Grid.Column="0" Text="Логин" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center" />
-            <TextBlock Name="PasswordBlock" Grid.Row="1" Grid.Column="0" Text="Пароль" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center"/>
+            <TextBox Name="LoginBox" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Stretch"  TextWrapping="Wrap" Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5"/>
+            <TextBox Name="PasswordBox" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"  TextWrapping="Wrap" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Name="LoginBlock" Grid.Row="0" Grid.Column="0" Text="Логин" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center" />
+            <TextBlock Name="PasswordBlock" Grid.Row="1" Grid.Column="0" Text="Пароль" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center"/>
+            <Button Name="RegistrationButton" Grid.Row="2" Grid.ColumnSpan="3" Command="{Binding GoToRegistrationPageCommand}" CommandParameter="{Binding RegistrationPageViewModel}" Content="Регистрация" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,5,10,5"/>
         </Grid>
     </Grid>
 </Page>

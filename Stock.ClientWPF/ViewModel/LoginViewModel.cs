@@ -1,5 +1,4 @@
-﻿using Stock.ClientWPF.Commands;
-using Stock.ClientWPF.Interfaces;
+﻿using Stock.ClientWPF.Interfaces;
 using Stock.ClientWPF.Model;
 using Stock.ClientWPF.Navigator;
 using System;
@@ -8,16 +7,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using Newtonsoft.Json;
-using System.Web;
 using System.Net;
-using System.IO;
+using Stock.ClientWPF.Helpers;
 
 namespace Stock.ClientWPF.ViewModel
 {
@@ -46,16 +41,21 @@ namespace Stock.ClientWPF.ViewModel
         }
 
         public static readonly string HomeViewModelAlias = "HomePageVM";
+        public static readonly string RegistrationViewModelAlias = "RegistrationPageVM";
+
         private readonly IViewModelsResolver _resolver;
+
         private readonly INotifyPropertyChanged homePageViewModel;
+        private readonly INotifyPropertyChanged registrationPageViewModel;
 
-        private ICommand goToHomePgeCommand;
+        private ICommand goToHomePageCommand;
+        private ICommand goToRegistrationPageCommand;
 
-        public ICommand GoToHomePgeCommand
+        public ICommand GoToHomePageCommand
         {
             get
             {
-                return goToHomePgeCommand ?? new RelayCommand<INotifyPropertyChanged>(async (INotifyPropertyChanged) =>
+                return goToHomePageCommand ?? new RelayCommand<INotifyPropertyChanged>(async (INotifyPropertyChanged) =>
                 {
                     LoginModel loginModel = new LoginModel() { Username = Login, Password = Password };
                     HttpClient client = new HttpClient();
@@ -63,19 +63,42 @@ namespace Stock.ClientWPF.ViewModel
                     String json;
                     try
                     {
-                        json = await PostRequestAsync("http://localhost:20895/api/authorization", loginModel);
+                        json = await WebHelper.PostRequestAsync("http://localhost:20895/api/authorization", loginModel);
                     }
                     catch (WebException e)
                     {
                         MessageBox.Show(e.Message);
                         return;
                     }
-                    User user = JsonConvert.DeserializeObject<User>(json);
+                    UserModel user = JsonConvert.DeserializeObject<UserModel>(json);
 
                     MessageBox.Show($"Name = {user.Name}, id = {user.Id}, login = {user.Login} \n Token: {user.Token}");
 
                     Navigation.Navigate(Navigation.HomePageAlias, HomePageViewModel);
                 });
+            }
+            set
+            {
+                goToHomePageCommand = value;
+                OnPropertyChanged("GoToHomePgeCommand");
+            }
+        }
+
+        public ICommand GoToRegistrationPageCommand
+        {
+            get
+            {
+                return goToRegistrationPageCommand ?? new RelayCommand<INotifyPropertyChanged>((INotifyPropertyChanged) =>
+                {
+
+
+                    Navigation.Navigate(Navigation.RegistrationPageAlias, RegistrationPageViewModel);
+                });
+            }
+            set
+            {
+                goToRegistrationPageCommand = value;
+                OnPropertyChanged("GoToRegistrationPageCommand");
             }
         }
 
@@ -84,43 +107,17 @@ namespace Stock.ClientWPF.ViewModel
             get { return homePageViewModel; }
         }
 
+        public INotifyPropertyChanged RegistrationPageViewModel
+        {
+            get { return registrationPageViewModel; }
+        }
+
         public LoginViewModel()
         {
             _resolver = ViewModelsResolver.GetInstance();
 
             homePageViewModel = _resolver.GetViewModelInstance(HomeViewModelAlias);
-        }
-
-        private async Task<String> PostRequestAsync(String uri, Object serializeObj, String contentType = "application/json")
-        {
-            WebRequest request = WebRequest.Create(uri);
-            request.Method = "POST"; // для отправки используется метод Post
-            // данные для отправки
-            string data = JsonConvert.SerializeObject(serializeObj, Formatting.Indented);
-            // преобразуем данные в массив байтов
-            byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(data);
-            // устанавливаем тип содержимого - параметр ContentType
-            request.ContentType = contentType;
-            // Устанавливаем заголовок Content-Length запроса - свойство ContentLength
-            request.ContentLength = byteArray.Length;
-
-            //записываем данные в поток запроса
-            using (Stream dataStream = request.GetRequestStream())
-            {
-                dataStream.Write(byteArray, 0, byteArray.Length);
-            }
-
-            String stringResponse;
-            WebResponse response = await request.GetResponseAsync();
-            using (Stream stream = response.GetResponseStream())
-            {
-                using (StreamReader reader = new StreamReader(stream))
-                {
-                    stringResponse = reader.ReadToEnd();
-                }
-            }
-            response.Close();
-            return stringResponse;
+            registrationPageViewModel = _resolver.GetViewModelInstance(RegistrationViewModelAlias);
         }
     }
 }

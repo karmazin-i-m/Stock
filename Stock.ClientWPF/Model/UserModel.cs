@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stock.ClientWPF.Model
 {
-    public class User
+    public class UserModel
     {
         public String Token { get; set; }
         public Int32 Id { get; set; }
