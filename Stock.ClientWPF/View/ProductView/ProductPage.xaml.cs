@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Stock.ClientWPF.View
+namespace Stock.ClientWPF.View.ProductView
 {
     /// <summary>
-    /// Interaction logic for HomePage.xaml
+    /// Interaction logic for ProductPage.xaml
     /// </summary>
-    public partial class HomePage : Page
+    public partial class ProductPage : Page
     {
-        public HomePage()
+        public ProductPage()
         {
             InitializeComponent();
         }

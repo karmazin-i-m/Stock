@@ -16,7 +16,7 @@ namespace Stock.ClientWPF.Navigator
         private static PagesResolver instance;
         private PagesResolver()
         {
-            _pagesResolvers.Add(Navigation.HomePageAlias, () => new HomePage());
+            _pagesResolvers.Add(Navigation.HomePageAlias, () => new View.ProductView.HomePage());
             _pagesResolvers.Add(Navigation.RegistrationPageAlias, () => new RegistrationPage());
         }
 
