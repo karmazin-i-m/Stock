@@ -14,9 +14,10 @@ namespace Stock.ClientWPF.Navigator
     /// </summary>
     public sealed class Navigation
     {
-        
+
         public static readonly string HomePageAlias = "HomePage";
         public static readonly string RegistrationPageAlias = "RegistrationPage";
+        public static readonly string UserPageAlias = "UserPage";
 
         private NavigationService _navService;
         private readonly IPageResolver _resolver;

@@ -70,6 +70,7 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\RegistrationViewModel.cs" />
+    <Compile Include="ViewModel\UserViewModel.cs" />
     <Compile Include="ViewModel\ViewModelsResolver.cs" />
     <Compile Include="View\ProductView\BasketPage.xaml.cs">
       <DependentUpon>BasketPage.xaml</DependentUpon>

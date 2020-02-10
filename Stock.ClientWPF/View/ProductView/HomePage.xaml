@@ -4,11 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Stock.ClientWPF.View.ProductView"
+      xmlns:viewmodel="clr-namespace:Stock.ClientWPF.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="HomePage"
       MinHeight="450"
       MinWidth="800">
+    <Page.DataContext>
+        <viewmodel:HomeViewModel/>
+    </Page.DataContext>
 
     <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
@@ -22,7 +26,7 @@
         <Frame Grid.Column="0" Grid.Row="1" Source="BasketPage.xaml" NavigationUIVisibility="Hidden"/>
         <Frame Grid.Column="1" Grid.Row="1" Source="ProductPage.xaml" NavigationUIVisibility="Hidden"/>
         <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Name="UserButton"  VerticalAlignment="Stretch" Margin="5">
+            <Button Name="UserButton" Command="{Binding GoToUserPageCommand}" CommandParameter="{Binding UserPageViewModel}"  VerticalAlignment="Stretch" Margin="5">
                 <Label Content="Пользователь" Margin="3" />
             </Button>
             <Button Name="LogOutButton" VerticalAlignment="Stretch" Margin="5">

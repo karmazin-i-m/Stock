@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Stock.ClientWPF.ViewModel
 {
     /// <summary>
-    /// Класс реализующий коллекцию всех вьюмоделей
+    /// Класс реализующий коллекцию всех вьюмоделей (Нужно заменить на что-то адекватное).
     /// </summary>
     public class ViewModelsResolver : IViewModelsResolver
     {
@@ -21,6 +21,7 @@ namespace Stock.ClientWPF.ViewModel
         {
             _vmResolvers.Add(LoginViewModel.HomeViewModelAlias, () => new HomeViewModel());
             _vmResolvers.Add(LoginViewModel.RegistrationViewModelAlias, () => new RegistrationViewModel());
+            _vmResolvers.Add(HomeViewModel.UserViewModelAlias, () => new UserViewModel());
         }
 
         public INotifyPropertyChanged GetViewModelInstance(string alias)

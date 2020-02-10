@@ -10,7 +10,7 @@ using System.Windows.Controls;
 namespace Stock.ClientWPF.Navigator
 {
     /// <summary>
-    /// класс хранящий данные о всех страницах
+    /// класс хранящий данные о всех страницах (Нужно заменить на что-то адекватное).
     /// </summary>
     public class PagesResolver : IPageResolver
     {
@@ -21,6 +21,7 @@ namespace Stock.ClientWPF.Navigator
         {
             _pagesResolvers.Add(Navigation.HomePageAlias, () => new View.ProductView.HomePage());
             _pagesResolvers.Add(Navigation.RegistrationPageAlias, () => new RegistrationPage());
+            _pagesResolvers.Add(Navigation.UserPageAlias, () => new UserPage());
         }
 
         public Page GetPageInstance(string alias)
