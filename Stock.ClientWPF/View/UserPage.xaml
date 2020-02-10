@@ -39,7 +39,7 @@
         <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Email}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
         <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Role}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
 
-        <Button Grid.Row="5" Grid.ColumnSpan="2" Margin="10">
+        <Button Grid.Row="5" Grid.ColumnSpan="2" Command="{Binding GoToHomePageCommand}" CommandParameter="{Binding BasePageViewModel}" Margin="10">
             <Label Content="Назад" />
         </Button>
     </Grid>

@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
@@ -59,17 +58,30 @@ namespace Stock.ClientWPF.ViewModel
                 {
                     LoginModel loginModel = new LoginModel() { Username = Login, Password = Password };
 
-                    String json;
+                    String user;
                     try
                     {
-                        json = await WebHelper.PostRequestAsync("http://localhost:20895/api/authorization", loginModel);
+                        user = await WebHelper.PostRequestAsync("http://localhost:20895/api/authorization", loginModel);
                     }
                     catch (WebException e)
                     {
                         MessageBox.Show(e.Message);
                         return;
                     }
-                    UserModel.CurrentUser = JsonConvert.DeserializeObject<UserModel>(json);
+                    UserModel.CurrentUser = JsonConvert.DeserializeObject<UserModel>(user);
+
+                    String products;
+                    try
+                    {
+                        products = await WebHelper.GetRequestAsync("http://localhost:20895/api/products", token: UserModel.CurrentUser.Token);
+                        ProductModel.Products = JsonConvert.DeserializeObject<IEnumerable<ProductModel>>(products);
+                    }
+                    catch (WebException e)
+                    {
+                        MessageBox.Show(e.Message + e.Status +e.InnerException?.Message);
+                        return;
+                    }
+
                     Navigation.Navigate(Navigation.HomePageAlias, HomePageViewModel);
                 });
             }

@@ -4,6 +4,7 @@ using Stock.ClientWPF.Model;
 using Stock.ClientWPF.Navigator;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,30 @@ namespace Stock.ClientWPF.ViewModel
         private readonly IViewModelsResolver _resolver;
         private readonly INotifyPropertyChanged userPageViewModel;
         private ICommand goToUserPageCommand;
+        private ProductModel selectedProduct;
+        private ObservableCollection<ProductModel> products;
+
+        public ObservableCollection<ProductModel> Products
+        {
+            get 
+            {
+                return products != null ? products : (products = new ObservableCollection<ProductModel>(ProductModel.Products));
+            }
+        }
+
+        public ProductModel SelectedPhone
+        {
+            get
+            {
+
+                return selectedProduct;
+            }
+            set
+            {
+                selectedProduct = value;
+                OnPropertyChanged("SelectedProduct");
+            }
+        }
 
         public ICommand GoToUserPageCommand
         {

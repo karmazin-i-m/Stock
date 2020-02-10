@@ -4,9 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Stock.ClientWPF.View.ProductView"
+      xmlns:viewmodel="clr-namespace:Stock.ClientWPF.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="405" d:DesignWidth="320"
       Title="ProductPage">
+    <Page.DataContext>
+        <viewmodel:HomeViewModel/>
+    </Page.DataContext>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -16,7 +20,7 @@
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Content="Подукты" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
 
-        <ListBox Grid.Row="1">
+        <ListBox Grid.Row="1" ItemsSource="{Binding Products}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -26,9 +30,9 @@
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Content="Изображение" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                         <StackPanel Grid.Column="1" Orientation="Vertical">
-                            <TextBlock HorizontalAlignment="Stretch" Background="Yellow"/>
-                            <TextBlock HorizontalAlignment="Stretch" Background="Blue"/>
-                            <TextBlock HorizontalAlignment="Stretch" Background="Red"/>
+                            <TextBlock HorizontalAlignment="Stretch" Text="{Binding Path=ProductName}"/>
+                            <TextBlock HorizontalAlignment="Stretch" Text="{Binding Path=Price}"/>
+                            <TextBlock HorizontalAlignment="Stretch" Text="{Binding Path=Weight}"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

@@ -1,9 +1,13 @@
-﻿using Stock.ClientWPF.Model;
+﻿using Stock.ClientWPF.Helpers;
+using Stock.ClientWPF.Model;
+using Stock.ClientWPF.Navigator;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Stock.ClientWPF.ViewModel
 {
@@ -15,10 +19,24 @@ namespace Stock.ClientWPF.ViewModel
         private String email;
         private Role role;
 
-        public UserViewModel()
+        private ICommand goToHomePageCommand;
+
+        public ICommand GoToHomePageCommand
         {
-            
+            get
+            {
+                return goToHomePageCommand ??
+                    (goToHomePageCommand = new RelayCommand<INotifyPropertyChanged>((INotifyPropertyChanged) =>
+                    {
+                            Navigation.GoBack();
+                    }));
+            }
         }
+        public INotifyPropertyChanged BasePageViewModel
+        {
+            get { return new BaseViewModel(); }
+        }
+
         public Int32 Id
         {
             get { return id != default ? id : (id = UserModel.CurrentUser.Id); }

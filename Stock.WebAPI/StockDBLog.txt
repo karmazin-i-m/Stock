@@ -2136,4 +2136,1003 @@ select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _In
 SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
 FROM [Users] AS [u]Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
-FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An error occurred using the connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An exception occurred in the database while iterating the results of a query for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: The connection was not closed. The connection's current state is connecting.
+   at System.Data.ProviderBase.DbConnectionClosedConnecting.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (396ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (289ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (281ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (291ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (312ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'Optimized query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ToSequence(Task<User> First(
+                source: IAsyncEnumerable<User> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+                        FROM [Users] AS [user]
+                        WHERE [user].[Login] = @__item_Login_0, 
+                    shaper: UnbufferedEntityShaper<User>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0Executed DbCommand (133ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An exception occurred in the database while iterating the results of a query for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)An exception occurred in the database while iterating the results of a query for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (404ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'Optimized query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ToSequence(Task<User> First(
+                source: IAsyncEnumerable<User> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+                        FROM [Users] AS [user]
+                        WHERE [user].[Login] = @__item_Login_0, 
+                    shaper: UnbufferedEntityShaper<User>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0Executed DbCommand (126ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An exception occurred in the database while iterating the results of a query for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)An exception occurred in the database while iterating the results of a query for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Beginning transaction with isolation level 'ReadCommitted'.Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [Login], [Name], [Password], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();Executed DbCommand (11ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [Login], [Name], [Password], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();A data reader was disposed.Committing transaction.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Disposing transaction.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (730ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'(from Product e in DbSet<Product>
+where Property([e], "Id") == __get_Item_0
+select [e]).FirstOrDefault()'Optimized query model: 
+'(from Product e in DbSet<Product>
+where Property([e], "Id") == __get_Item_0
+select [e]).FirstOrDefault()'(QueryContext queryContext) => IAsyncEnumerable<Product> _InterceptExceptions(
+    source: IAsyncEnumerable<Product> _TrackEntities(
+        results: IAsyncEnumerable<Product> _ToSequence(Task<Product> FirstOrDefault(
+                source: IAsyncEnumerable<Product> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+                        FROM [Products] AS [e]
+                        WHERE [e].[Id] = @__get_Item_0, 
+                    shaper: BufferedEntityShaper<Product>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Product }, 
+        entityAccessors: List<Func<Product, object>> 
+        { 
+            Func<Product, Product>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0Executed DbCommand (158ms) [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (366ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An error occurred using the connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An exception occurred in the database while iterating the results of a query for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: The connection was not closed. The connection's current state is connecting.
+   at System.Data.ProviderBase.DbConnectionClosedConnecting.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (412ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An error occurred using the connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An exception occurred in the database while iterating the results of a query for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: The connection was not closed. The connection's current state is connecting.
+   at System.Data.ProviderBase.DbConnectionClosedConnecting.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (449ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (294ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Executed DbCommand (467ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An error occurred using the connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An exception occurred in the database while iterating the results of a query for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: The connection was not closed. The connection's current state is connecting.
+   at System.Data.ProviderBase.DbConnectionClosedConnecting.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (709ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (362ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (375ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (246ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'(from Product e in DbSet<Product>
+where Property([e], "Id") == __get_Item_0
+select [e]).FirstOrDefault()'Optimized query model: 
+'(from Product e in DbSet<Product>
+where Property([e], "Id") == __get_Item_0
+select [e]).FirstOrDefault()'(QueryContext queryContext) => IAsyncEnumerable<Product> _InterceptExceptions(
+    source: IAsyncEnumerable<Product> _TrackEntities(
+        results: IAsyncEnumerable<Product> _ToSequence(Task<Product> FirstOrDefault(
+                source: IAsyncEnumerable<Product> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+                        FROM [Products] AS [e]
+                        WHERE [e].[Id] = @__get_Item_0, 
+                    shaper: BufferedEntityShaper<Product>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Product }, 
+        entityAccessors: List<Func<Product, object>> 
+        { 
+            Func<Product, Product>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0Executed DbCommand (102ms) [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[OrderId], [e].[Price], [e].[ProductName], [e].[Weight]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from Product <generated>_0 in DbSet<Product>
+select [<generated>_0]'Optimized query model: 
+'from Product <generated>_0 in DbSet<Product>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<Product> _InterceptExceptions(
+    source: IAsyncEnumerable<Product> _TrackEntities(
+        results: IAsyncEnumerable<Product> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+                FROM [Products] AS [p], 
+            shaper: BufferedEntityShaper<Product>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Product }, 
+        entityAccessors: List<Func<Product, object>> 
+        { 
+            Func<Product, Product>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (203ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (331ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (328ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from Product <generated>_0 in DbSet<Product>
+select [<generated>_0]'Optimized query model: 
+'from Product <generated>_0 in DbSet<Product>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<Product> _InterceptExceptions(
+    source: IAsyncEnumerable<Product> _TrackEntities(
+        results: IAsyncEnumerable<Product> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+                FROM [Products] AS [p], 
+            shaper: BufferedEntityShaper<Product>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Product }, 
+        entityAccessors: List<Func<Product, object>> 
+        { 
+            Func<Product, Product>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (279ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from Product <generated>_0 in DbSet<Product>
+select [<generated>_0]'Optimized query model: 
+'from Product <generated>_0 in DbSet<Product>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<Product> _InterceptExceptions(
+    source: IAsyncEnumerable<Product> _TrackEntities(
+        results: IAsyncEnumerable<Product> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+                FROM [Products] AS [p], 
+            shaper: BufferedEntityShaper<Product>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Product }, 
+        entityAccessors: List<Func<Product, object>> 
+        { 
+            Func<Product, Product>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (302ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'Optimized query model: 
+'(from User user in DbSet<User>
+where [user].Login == __item_Login_0
+select [user]).First()'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ToSequence(Task<User> First(
+                source: IAsyncEnumerable<User> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+                        FROM [Users] AS [user]
+                        WHERE [user].[Login] = @__item_Login_0, 
+                    shaper: UnbufferedEntityShaper<User>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0Executed DbCommand (139ms) [Parameters=[@__item_Login_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [user].[Id], [user].[Email], [user].[Login], [user].[Name], [user].[Password], [user].[Role]
+FROM [Users] AS [user]
+WHERE [user].[Login] = @__item_Login_0A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An exception occurred in the database while iterating the results of a query for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)An exception occurred in the database while saving changes for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)An exception occurred in the database while iterating the results of a query for context type 'Stock.DB.StockContext'.
+System.InvalidOperationException: Source sequence doesn't contain any elements.
+   at System.Linq.AsyncEnumerable.First_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from Product <generated>_0 in DbSet<Product>
+select [<generated>_0]'Optimized query model: 
+'from Product <generated>_0 in DbSet<Product>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<Product> _InterceptExceptions(
+    source: IAsyncEnumerable<Product> _TrackEntities(
+        results: IAsyncEnumerable<Product> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+                FROM [Products] AS [p], 
+            shaper: BufferedEntityShaper<Product>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Product }, 
+        entityAccessors: List<Func<Product, object>> 
+        { 
+            Func<Product, Product>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Executed DbCommand (285ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from Product <generated>_0 in DbSet<Product>
+select [<generated>_0]'Optimized query model: 
+'from Product <generated>_0 in DbSet<Product>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<Product> _InterceptExceptions(
+    source: IAsyncEnumerable<Product> _TrackEntities(
+        results: IAsyncEnumerable<Product> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+                FROM [Products] AS [p], 
+            shaper: BufferedEntityShaper<Product>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Product }, 
+        entityAccessors: List<Func<Product, object>> 
+        { 
+            Func<Product, Product>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.An 'IServiceProvider' was created for internal use by Entity Framework.Entity Framework Core 2.0.0-rtm-26452 initialized 'StockContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneOpening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Optimized query model: 
+'from User <generated>_0 in DbSet<User>
+select [<generated>_0]'Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0(QueryContext queryContext) => IAsyncEnumerable<User> _InterceptExceptions(
+    source: IAsyncEnumerable<User> _TrackEntities(
+        results: IAsyncEnumerable<User> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+                FROM [Users] AS [u], 
+            shaper: UnbufferedEntityShaper<User>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: User }, 
+        entityAccessors: List<Func<User, object>> 
+        { 
+            Func<User, User>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Executed DbCommand (339ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Login], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Compiling query model: 
+'from Product <generated>_0 in DbSet<Product>
+select [<generated>_0]'Optimized query model: 
+'from Product <generated>_0 in DbSet<Product>
+select [<generated>_0]'(QueryContext queryContext) => IAsyncEnumerable<Product> _InterceptExceptions(
+    source: IAsyncEnumerable<Product> _TrackEntities(
+        results: IAsyncEnumerable<Product> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+                FROM [Products] AS [p], 
+            shaper: BufferedEntityShaper<Product>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Product }, 
+        entityAccessors: List<Func<Product, object>> 
+        { 
+            Func<Product, Product>, 
+        }
+    ), 
+    contextType: Stock.DB.StockContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)Opening connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Opened connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]A data reader was disposed.Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[Price], [p].[ProductName], [p].[Weight]
+FROM [Products] AS [p]A data reader was disposed.Closing connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.Closed connection to database 'StockDB' on server '(localdb)\mssqllocaldb'.
