@@ -8,6 +8,8 @@ namespace Stock.ClientWPF.Model
 {
     public class UserModel
     {
+        public static UserModel CurrentUser { get; set; }
+
         public String Token { get; set; }
         public Int32 Id { get; set; }
         public String Name { get; set; }

@@ -876,3 +876,196 @@ Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.C
 Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
 Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 2588.413ms
 Request finished in 3468.1459ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request finished in 795.9158ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2696.1022ms
+Request finished in 5478.4527ms 200 text/plain; charset=utf-8
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 5271.5133ms
+An unhandled exception has occurred while executing the request
+Request finished in 8472.8094ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 970.1182ms
+Request finished in 1041.7865ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request finished in 507.7073ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2743.634ms
+Request finished in 4538.0414ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 61
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 2322.6348ms
+Request finished in 2519.3179ms 400 application/json; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 63
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 81.1909ms
+Request finished in 113.041ms 400 application/json; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 280.0844ms
+Request finished in 305.1124ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request finished in 628.8709ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 3886.2846ms
+Request finished in 6769.6263ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 2484.1927ms
+Request finished in 2678.4522ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request finished in 625.2227ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2999.0507ms
+Request finished in 5107.8553ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 2271.4733ms
+Request finished in 2454.8916ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request finished in 491.3475ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2680.8857ms
+Request finished in 4662.291ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 1968.652ms
+Request finished in 2126.0811ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request finished in 616.379ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2914.9747ms
+Request finished in 5532.9822ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request finished in 820.3498ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 3569.2897ms
+Request finished in 6255.7138ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 2461.3675ms
+Request finished in 2660.8777ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Request finished in 805.9923ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 4947.4758ms
+Request finished in 7764.8254ms 200 text/plain; charset=utf-8
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 7735.7354ms
+An unhandled exception has occurred while executing the request
+Request finished in 11023.2189ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 817.6309ms
+Request finished in 897.4564ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request finished in 587.5065ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2409.7333ms
+Request finished in 4550.57ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request finished in 696.254ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2931.5932ms
+Request finished in 5168.0058ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request finished in 396.4477ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 3067.9064ms
+Request finished in 4644.2698ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request finished in 720.2553ms 200 
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Request finished in 383.1652ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2577.0003ms
+Request finished in 4159.3419ms 200 text/plain; charset=utf-8
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 5598.7116ms
+An unhandled exception has occurred while executing the request
+Request finished in 7926.2802ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 895.305ms
+Request finished in 934.6984ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request finished in 534.8365ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2557.9215ms
+Request finished in 4506.487ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 2604.7079ms
+Request finished in 2797.6319ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request finished in 446.3889ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2571.2894ms
+Request finished in 4269.6141ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 2750.1903ms
+Request finished in 2936.8967ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:20895/  0
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Request finished in 518.1282ms 200 
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 3405.4817ms
+Request finished in 5254.1023ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 2557.7633ms
+An unhandled exception has occurred while executing the request
+Request finished in 3412.2714ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 798.5245ms
+Request finished in 883.9696ms 200 application/json; charset=utf-8

@@ -69,9 +69,7 @@ namespace Stock.ClientWPF.ViewModel
                         MessageBox.Show(e.Message);
                         return;
                     }
-                    UserModel user = JsonConvert.DeserializeObject<UserModel>(json);
-
-                    MessageBox.Show($"Name = {user.Name}, id = {user.Id}, login = {user.Login} \n Token: {user.Token}");
+                    UserModel.CurrentUser = JsonConvert.DeserializeObject<UserModel>(json);
 
                     Navigation.Navigate(Navigation.HomePageAlias, HomePageViewModel);
                 });

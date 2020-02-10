@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Stock.ClientWPF.View.ProductView"
       xmlns:viewmodel="clr-namespace:Stock.ClientWPF.ViewModel"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="{Binding Height}" d:DesignWidth="{Binding Width}"
       Title="HomePage"
       MinHeight="450"
       MinWidth="800">

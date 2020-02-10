@@ -19,6 +19,8 @@ namespace Stock.ClientWPF.Navigator
         public static readonly string RegistrationPageAlias = "RegistrationPage";
         public static readonly string UserPageAlias = "UserPage";
 
+        private readonly List<string> _historic;
+
         private NavigationService _navService;
         private readonly IPageResolver _resolver;
 
@@ -36,6 +38,7 @@ namespace Stock.ClientWPF.Navigator
                 Instance._navService.Navigated += Instance._navService_Navigated;
             }
         }
+
         public static void Navigate(Page page, object context)
         {
             if (Instance._navService == null || page == null)
