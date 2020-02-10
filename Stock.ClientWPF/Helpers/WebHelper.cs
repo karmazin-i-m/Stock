@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Stock.ClientWPF.Helpers
 {
@@ -17,6 +18,7 @@ namespace Stock.ClientWPF.Helpers
             request.Method = "POST";
 
             string data = JsonConvert.SerializeObject(serializeObj, Formatting.Indented);
+            MessageBox.Show(data);
             byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(data);
             request.ContentType = contentType;
             request.ContentLength = byteArray.Length;

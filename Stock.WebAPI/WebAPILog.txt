@@ -462,3 +462,132 @@ Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.G
 Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
 Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 1459.6042ms
 Request finished in 2421.9877ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2546.0435ms
+Request finished in 3803.0253ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/favicon.ico  
+Request finished in 24.9894ms 404 
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 2649.2013ms
+Request finished in 2779.0323ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 12.2789ms
+Request finished in 19.8086ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/favicon.ico  
+Request finished in 2.6007ms 404 
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 3.2947ms
+Request finished in 8.3173ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2756.9551ms
+Request finished in 4260.113ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 1967.042ms
+Request finished in 2083.8728ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 1897.8952ms
+Request finished in 2757.1767ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2205.8761ms
+Request finished in 3391.9726ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 5.0267ms
+Request finished in 13.1058ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 55
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 2046.6067ms
+Request finished in 2212.6325ms 200 application/json; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/registration application/json 136
+Executing action method Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) with arguments (Stock.WebAPI.Models.RegistrationModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 200
+Executed action Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) in 34.5109ms
+Request finished in 50.6898ms 200 
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 45
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 401
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 29.8564ms
+Request finished in 33.7651ms 401 
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 45
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 401
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 18.2201ms
+Request finished in 20.7205ms 401 
+Request starting HTTP/1.1 POST http://localhost:20895/api/registration application/json 135
+Executing action method Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) with arguments (Stock.WebAPI.Models.RegistrationModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 200
+Executed action Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) in 6.4445ms
+Request finished in 16.4202ms 200 
+Request starting HTTP/1.1 POST http://localhost:20895/api/registration application/json 128
+Executing action method Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) with arguments (Stock.WebAPI.Models.RegistrationModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 200
+Executed action Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) in 6.9267ms
+Request finished in 16.8163ms 200 
+Request starting HTTP/1.1 POST http://localhost:20895/api/registration application/json 120
+Executing action method Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) with arguments (Stock.WebAPI.Models.RegistrationModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 200
+Executed action Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) in 6.2493ms
+Request finished in 12.6735ms 200 
+Request starting HTTP/1.1 POST http://localhost:20895/api/registration application/json 125
+Executing action method Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) with arguments (Stock.WebAPI.Models.RegistrationModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 200
+Executed action Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) in 14.6403ms
+Request finished in 23.552ms 200 
+Request starting HTTP/1.1 POST http://localhost:20895/api/registration application/json 142
+Executing action method Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) with arguments (Stock.WebAPI.Models.RegistrationModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 200
+Executed action Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) in 3.2351ms
+Request finished in 8.1119ms 200 
+Request starting HTTP/1.1 POST http://localhost:20895/api/registration application/json 136
+Executing action method Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) with arguments (Stock.WebAPI.Models.RegistrationModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 200
+Executed action Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) in 3.465ms
+Request finished in 8.8225ms 200 
+Request starting HTTP/1.1 POST http://localhost:20895/api/registration application/json 137
+Executing action method Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) with arguments (Stock.WebAPI.Models.RegistrationModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 200
+Executed action Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) in 10.6583ms
+Request finished in 18.1522ms 200 
+Request starting HTTP/1.1 GET http://localhost:20895/api/authorization  
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) with arguments ((null)) - ModelState is Valid
+Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.Get (Stock.WebAPI) in 2.3066ms
+Request finished in 6.008ms 200 text/plain; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:20895/api/authorization application/json 56
+Executing action method Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) with arguments (Stock.WebAPI.Models.LoginModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 401
+Executed action Stock.WebAPI.Users.Controllers.AuthorizationController.CreateTokenAsync (Stock.WebAPI) in 60.6217ms
+Request finished in 68.5064ms 401 
+Request starting HTTP/1.1 POST http://localhost:20895/api/registration application/json 136
+Executing action method Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) with arguments (Stock.WebAPI.Models.RegistrationModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 200
+Executed action Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) in 5.2381ms
+Request finished in 15.5714ms 200 
+Request starting HTTP/1.1 POST http://localhost:20895/api/registration application/json 137
+Executing action method Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) with arguments (Stock.WebAPI.Models.RegistrationModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 200
+Executed action Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) in 2.7714ms
+Request finished in 6.1821ms 200 
+Request starting HTTP/1.1 POST http://localhost:20895/api/registration application/json 125
+Executing action method Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) with arguments (Stock.WebAPI.Models.RegistrationModel) - ModelState is Valid
+Executing HttpStatusCodeResult, setting HTTP status code 200
+Executed action Stock.WebAPI.Controllers.Users.RegistrationController.RegistrationYser (Stock.WebAPI) in 2.8439ms
+Request finished in 6.2636ms 200 

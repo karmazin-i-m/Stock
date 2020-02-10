@@ -63,6 +63,7 @@
     <Compile Include="Helpers\WebHelper.cs" />
     <Compile Include="Interfaces\IPageResolver.cs" />
     <Compile Include="Interfaces\IViewModelsResolver.cs" />
+    <Compile Include="Model\RegistrationModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Navigator\Navigation.cs" />
     <Compile Include="Navigator\PagesResolver.cs" />

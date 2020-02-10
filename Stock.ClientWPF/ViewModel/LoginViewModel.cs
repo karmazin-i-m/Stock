@@ -58,7 +58,6 @@ namespace Stock.ClientWPF.ViewModel
                 return goToHomePageCommand ?? new RelayCommand<INotifyPropertyChanged>(async (INotifyPropertyChanged) =>
                 {
                     LoginModel loginModel = new LoginModel() { Username = Login, Password = Password };
-                    HttpClient client = new HttpClient();
 
                     String json;
                     try

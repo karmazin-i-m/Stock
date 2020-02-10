@@ -9,6 +9,6 @@
         MinWidth="300"
         MinHeight="350" Loaded="Window_Loaded">
     <Grid>
-        <Frame x:Name="Frame" Source="LoginPage.xaml" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="Frame" Source="LoginPage.xaml"/>
     </Grid>
 </Window>

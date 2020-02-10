@@ -34,11 +34,11 @@
                 <ColumnDefinition Width="0.6*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Name="NameBox" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
-            <TextBox Name="LoginBox" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
-            <TextBox Name="EmailBox" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
-            <TextBox Name="PasswordBox" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
-            <TextBox Name="ConfirmPasswordBox" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            <TextBox Name="NameBox" Grid.Row="0" Grid.Column="1" Text="{Binding Name}"  HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            <TextBox Name="LoginBox" Grid.Row="1" Grid.Column="1" Text="{Binding Login}" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            <TextBox Name="EmailBox" Grid.Row="2" Grid.Column="1" Text="{Binding Email}" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            <TextBox Name="PasswordBox" Grid.Row="3" Grid.Column="1" Text="{Binding Password}" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            <TextBox Name="ConfirmPasswordBox" Grid.Row="4" Grid.Column="1" Text="{Binding ConfirmPassword}" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,5,0"/>
             <TextBlock Name="NameBlock" Grid.Row="0" Grid.Column="0" Text="Имя" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center" />
             <TextBlock Name="LoginBlock" Grid.Row="1" Grid.Column="0" Text="Логин" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center"/>
             <TextBlock Name="EmailBlock" Grid.Row="2" Grid.Column="0" Text="E-mail" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center"/>
