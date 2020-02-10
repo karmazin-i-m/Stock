@@ -24,7 +24,6 @@ namespace Stock.ClientWPF.View
         public LoginPage()
         {
             InitializeComponent();
-            DataContext = new LoginViewModel();
         }
     }
 }
