@@ -19,6 +19,15 @@ namespace Stock.ClientWPF.ViewModel
         {
             
         }
+        public Int32 Id
+        {
+            get { return id != default ? id : (id = UserModel.CurrentUser.Id); }
+            set
+            {
+                id = value;
+                OnPropertyChanged("Id");
+            }
+        }
         public String Name
         {
             get { return name != default ? name : (name = UserModel.CurrentUser.Name); }
@@ -26,6 +35,15 @@ namespace Stock.ClientWPF.ViewModel
             {
                 name = value;
                 OnPropertyChanged("Name");
+            }
+        }
+        public String Login
+        {
+            get { return login != default ? login : (login = UserModel.CurrentUser.Name); }
+            set
+            {
+                login = value;
+                OnPropertyChanged("Login");
             }
         }
         public String Email

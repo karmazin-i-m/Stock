@@ -70,7 +70,6 @@ namespace Stock.ClientWPF.ViewModel
                         return;
                     }
                     UserModel.CurrentUser = JsonConvert.DeserializeObject<UserModel>(json);
-
                     Navigation.Navigate(Navigation.HomePageAlias, HomePageViewModel);
                 });
             }
