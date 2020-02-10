@@ -36,7 +36,7 @@ namespace Stock.WebAPI.Users.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateTokenAsync([FromBody]LoginModel login)
         {
-            IActionResult response = Unauthorized();
+            IActionResult response = BadRequest("Некоректные данные");
             User user = await Authenticate(login);
 
             if (user != null)

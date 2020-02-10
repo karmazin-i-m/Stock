@@ -28,16 +28,16 @@ namespace Stock.WebAPI.Controllers.Users
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult RegistrationYser([FromBody]RegistrationModel registrationUser)
+        public async Task<IActionResult> RegistrationUser([FromBody]RegistrationModel registrationUser)
         {
             if (registrationUser.Password != registrationUser.Password)
                 return BadRequest("Пароли не совпадают");
-            return Ok();
+            return Ok(await RegistrationAsync(registrationUser));
         }
 
-        private void Registration(RegistrationModel registrationUser)
+        private async Task<Int32> RegistrationAsync(RegistrationModel registrationUser)
         {
-            users.Create(new DB.Models.User()
+            Int32 answer = await users.CreateAsync(new DB.Models.User()
             {
                 Name = registrationUser.Name,
                 Password = registrationUser.Password,
@@ -46,6 +46,7 @@ namespace Stock.WebAPI.Controllers.Users
                 Role = Role.User
             });
             db.Save();
+            return answer;
         }
     }
 }
